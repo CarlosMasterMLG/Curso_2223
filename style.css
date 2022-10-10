@@ -15,7 +15,7 @@
     float:left;
     height: 100%;
     width:33%;
-    background-color: rgb(2, 213, 250);
+    background-color: greenyellow;
 
 }
 .segunda_columna{
@@ -31,7 +31,7 @@
     width:33%;
     position: relative;
 }
-/* INTENTO DE PONER IMAGEN
+
 .img{
     margin: 10px auto;
     border-radius: 5px;
@@ -47,7 +47,7 @@
 .img img{
     width: 100%;
   }
-  */
+  
 .contenedor{
     background-color: black;
     height: 100%;

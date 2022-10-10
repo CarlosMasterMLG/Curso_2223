@@ -29,6 +29,7 @@ echo 'Variable $_SERVER[]'. $_SERVER["HTTP_USER_AGENT"]."<br>";
 echo 'Variable $_SERVER'. obtenerInformacion($_SERVER);
 ?>
 
+
 <!-- Prueba a ejecutar el script con otra de las variables superglobales
 $_GLOBALS
 $_GET

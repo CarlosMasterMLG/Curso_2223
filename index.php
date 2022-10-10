@@ -31,10 +31,10 @@
                         <a href="1/4_constantes.php">Actividad 5</a>
                     </ol>
                     <ol>
-                        <a href="1/5._variables_super_globales.php">Actividad 6</a>
+                        <a href="1/5_variables_super_globales.php">Actividad 6</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 7</a>
+                        <a href="1/6_validar_get.php">Actividad 7</a>
                     </ol>
                     <ol>
                         <a href="">Actividad 8</a>
@@ -46,7 +46,7 @@
 
             </div>
             <div class="segunda_columna">
-                <?php include('1/5._variables_super_globales.php'); ?>
+                <?php include('1/0_hola_mundo.php'); ?>
             </div>
             <div class="tercera_columna">
 
