@@ -4,27 +4,28 @@
     height: 25%;
 }
 .segunda_caja{
-    background-color: rgb(61, 248, 4);
+    background-color: rgb(2, 213, 250);
     height: 50%;
 }
 .tercera_caja{
-    background-color: rgb(61, 248, 4);
+    background-color: rgb(2, 213, 250);
     height: 25%;
 }
 .primera_columna{
     float:left;
     height: 100%;
     width:33%;
-    background-color: rgb(61, 248, 4);
+    background-color: rgb(2, 213, 250);
 
 }
 .segunda_columna{
     float:left;
     height: 100%;
     width:34%;
-    background-color: red;
+    background-color: white;
 }
 .tercera_columna{
+    background-color: rgb(2, 213, 250);
     float:left;
     height: 100%;
     width:33%;
