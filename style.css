@@ -1,0 +1,60 @@
+* {margin: 0px; padding: 0px;} /* margin es el margen exterior. padding, margen interior */
+.primera_caja{
+    background-color: rgb(61, 248, 4);
+    height: 25%;
+}
+.segunda_caja{
+    background-color: rgb(61, 248, 4);
+    height: 50%;
+}
+.tercera_caja{
+    background-color: rgb(61, 248, 4);
+    height: 25%;
+}
+.primera_columna{
+    float:left;
+    height: 100%;
+    width:33%;
+    background-color: rgb(61, 248, 4);
+
+}
+.segunda_columna{
+    float:left;
+    height: 100%;
+    width:34%;
+    background-color: red;
+}
+.tercera_columna{
+    float:left;
+    height: 100%;
+    width:33%;
+    position: relative;
+}
+/* INTENTO DE PONER IMAGEN
+.img{
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 13px;
+    width: 220px;
+    height: 220px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background:url(/imgs/guts.jpg);
+    background-size: cover;
+}
+.img img{
+    width: 100%;
+  }
+  */
+.contenedor{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+h1{
+    padding: 5%;
+}
+ol{
+    padding: 5px;
+}
