@@ -2,6 +2,7 @@
 <head>
     <title>Indice</title>
     <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> 
 </head>
 <body>
     <div class="contenedor">
@@ -42,7 +43,17 @@
                     <ol>
                         <a href="">Actividad 9</a>
                     </ol>
+                    <ol>
+                        <a href="">Actividad 10</a>
+                    </ol>
+                    <ol>
+                        <a href="">Actividad 11</a>
+                    </ol>
+                    <ol>
+                        <a href="1/vocales_get.php">Vocales con GET</a>
+                    </ol>
                 </ul>
+                
 
             </div>
             <div class="segunda_columna">
