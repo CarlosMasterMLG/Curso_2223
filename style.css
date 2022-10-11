@@ -1,6 +1,6 @@
 * {margin: 0px; padding: 0px;} /* margin es el margen exterior. padding, margen interior */
 .primera_caja{
-    background-color: rgb(61, 248, 4);
+    background-color: greenyellow;
     height: 25%;
 }
 .segunda_caja{
