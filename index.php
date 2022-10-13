@@ -38,16 +38,16 @@
                         <a href="1/6_validar_get.php">Actividad 7</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 8</a>
+                        <a href="1/8_info.php">Actividad 8</a>
                     </ol>
                     <ol>
                         <a href="">Actividad 9</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 10</a>
+                        <a href="1/exception.php">Actividad 10</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 11</a>
+                        <a href="">Excepción</a>
                     </ol>
                     <ol>
                         <a href="1/vocales_get.php">Vocales con GET</a>
