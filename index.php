@@ -41,10 +41,19 @@
                         <a href="1/8_info.php">Actividad 8</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 9</a>
+                        <a href="1/exception.php">Actividad 9</a>
                     </ol>
                     <ol>
-                        <a href="1/exception.php">Actividad 10</a>
+                        <a href="">Actividad 10</a>
+                    </ol>
+                    <ol>
+                        <a href="">Actividad 11</a>
+                    </ol>
+                    <ol>
+                        <a href="">Actividad 12</a>
+                    </ol>
+                    <ol>
+                        <a href="1/posición.php">Posición</a>
                     </ol>
                     <ol>
                         <a href="">Excepción</a>
