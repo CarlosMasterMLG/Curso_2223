@@ -47,10 +47,10 @@
                         <a href="">Actividad 10</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 11</a>
+                        <a href="calculadora/calculadora_usuario.php">Calculadora Usuario</a>
                     </ol>
                     <ol>
-                        <a href="">Actividad 12</a>
+                        <a href="calculadora/calculadora.php">Calculadora</a>
                     </ol>
                     <ol>
                         <a href="1/posición.php">Posición</a>
