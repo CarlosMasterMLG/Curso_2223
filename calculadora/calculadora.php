@@ -22,13 +22,71 @@
             }
 
             function coeficienteBinominial($n, $k){
-                // hay que llamar al metodo anterior
-                $x = $n - $k;
-                $this->obtenerFactorial();
-                $resultado = (obtenerFactorial($n))/(obtenerFactorial($k)*obtenerFactorial($x));
+
+                $resultado = ($this->obtenerFactorial($n)) / ($this->obtenerFactorial($k) * $this->obtenerFactorial($n - $k));
 
                 return $resultado;
             }
+
+            function convierteBinarioDecimal($binario){
+                
+                $decimal = bindec($binario);
+                return $decimal;
+                
+            }
+
+            function sumaNumerosPares($arrayNumeros){
+
+                $resultado = 0;
+
+                for ($i=0; $i < count($arrayNumeros); $i++) { 
+                    if ($arrayNumeros[$i] % 2 == 0) {
+                        $resultado = $resultado + $arrayNumeros[$i];
+                    }
+                }
+                return $resultado;
+            }
+
+            function esPalindromo($palabra1, $palabra2){
+
+                //$palabra1Dividida = explode("", $palabra1);
+                $palabra1Dividida = str_split($palabra1);
+
+                $palabra1Invertida = array_reverse($palabra1Dividida);
+
+                $palabra1InvertidaString = "";
+
+                for ($i=0; $i < count($palabra1Invertida); $i++) { 
+                    $palabra1InvertidaString = $palabra1InvertidaString . $palabra1Invertida[$i];
+                }
+
+                if ($palabra1InvertidaString == $palabra2) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            }
+
+            function sumaMatrices($matriz1, $matriz2){
+                // las matrices van con dos arrays bidimensionales
+
+                for ($i=0; $i < count($matriz1); $i++) { 
+                    
+                    for ($j=0; $j < count($matriz1); $j++) { 
+                        $matriz1[$i] = $matriz1[$i] + $matriz1[$j];
+
+                        
+                    }
+
+                    echo $matriz1[$i];
+
+                }
+
+
+            }
+
+
 
         }
         

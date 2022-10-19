@@ -16,22 +16,49 @@
         require "calculadora.php";
     
         $numero = 6;
-        $n = 2;
-        $k = 4;
+        $n = 5;
+        $k = 2;
 
-        $factorial1 = new Calculadora;
+        $calculadora = new Calculadora;
 
         if (isset($numero)){
-            echo "El factorial de $numero es " , $factorial1->obtenerFactorial($numero);
+            echo "El factorial de $numero es " , $calculadora->obtenerFactorial($numero);
         } else {
             echo "Variable numero no declarada.";
         }
 
-        if (isset($n) && isset ($k)) {
-            echo "<br><br>La operación coeficiente binomial de $n y $k es " , $factorial1->coeficienteBinominial($n, $k);
+        
+        echo "<br><br>El coeficiente binominial de $n y $k es " . $calculadora->coeficienteBinominial($n, $k);
+        
+
+        $binario = 1000;
+        echo "<br><br>" . $binario . " en decimal es " . $calculadora->convierteBinarioDecimal($binario);
+
+        $arrayNumeros = array(1,2,3,4,5,6,7,8,9,10);
+
+        echo "<br><br>La suma de los números pares del array es: " . $calculadora->sumaNumerosPares($arrayNumeros);
+
+        $palabra1 = "arroz";
+        $palabra2 = "zorra";
+
+        if ($calculadora->esPalindromo($palabra1, $palabra2) == 1) {
+            echo "<br><br>" . $palabra1 . " y " . $palabra2 . " son palindromos";
         } else {
-            echo "<br><br>Variable numero no declarada.<br>";
+            echo "<br><br>" . $palabra1 . " y " . $palabra2 . " no son palindromos";
         }
+
+        $matriz1 = array(
+            array(2, 0, 1),
+            array(3, 0, 0),
+            array(5, 1, 1)
+        );
+        $matriz2 = array(
+            array(1, 0, 1),
+            array(1, 2, 1),
+            array(1, 1, 0)
+        );
+
+        echo "<br><br>6 " . $calculadora->sumaMatrices($matriz1, $matriz2);
         
     ?>
     
