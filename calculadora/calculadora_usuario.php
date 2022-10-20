@@ -59,7 +59,6 @@
         );
 
         echo "<br><br>La matriz con el resultado de sumar las dos anteriores es:<br>";
-        //$calculadora->sumaMatrices($matriz1, $matriz2);
         print_r ($calculadora->sumaMatrices($matriz1, $matriz2));
         
     ?>
