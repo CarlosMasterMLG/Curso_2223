@@ -63,7 +63,7 @@
 
             </div>
             <div class="segunda_columna">
-                <?php include('1/0_hola_mundo.php'); ?>
+                <?php include('calculadora/calculadora_usuario.php'); ?>
             </div>
             <div class="tercera_columna">
 

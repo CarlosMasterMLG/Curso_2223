@@ -69,28 +69,19 @@
             }
 
             function sumaMatrices($matriz1, $matriz2){
-                // las matrices van con dos arrays bidimensionales
+                
+                $auxiliar = array();
 
                 for ($i=0; $i < count($matriz1); $i++) { 
+
+                    $auxiliar[] = array();
                     
-                    for ($j=0; $j < count($matriz1); $j++) { 
-                        $matriz1[$i] = $matriz1[$i] + $matriz1[$j];
-
-                        
+                    for ($j=0; $j < count($matriz1[$i]); $j++) { 
+                        $auxiliar[$i][$j] = $matriz1[$i][$j] + $matriz2[$i][$j];                        
                     }
-
-                    echo $matriz1[$i];
-
                 }
-
-
+                return $auxiliar;
             }
-
-
-
         }
-        
-
-        
     ?>
     
