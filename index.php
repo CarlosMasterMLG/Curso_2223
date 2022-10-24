@@ -53,7 +53,7 @@
                         <a href="1/posición.php">Posición</a>
                     </ol>
                     <ol>
-                        <a href="">Excepción</a>
+                        <a href="1/cancionSapo.php">Canción del sapo</a>
                     </ol>
                     <ol>
                         <a href="1/vocales_get.php">Vocales con GET</a>
