@@ -47,16 +47,19 @@
                         <a href="">Actividad 10</a>
                     </ol>
                     <ol>
-                        <a href="calculadora/calculadora_usuario.php">Calculadora Usuario</a>
+                        <a href="2/calculadora/calculadora_usuario.php">Calculadora Usuario</a>
                     </ol>
                     <ol>
                         <a href="1/posición.php">Posición</a>
                     </ol>
                     <ol>
-                        <a href="1/cancionSapo.php">Canción del sapo</a>
+                        <a href="2/cancionSapo.php">Canción del sapo</a>
                     </ol>
                     <ol>
-                        <a href="1/vocales_get.php">Vocales con GET</a>
+                        <a href="2/vocales_get.php">Vocales con GET</a>
+                    </ol>
+                    <ol>
+                        <a href="2/practicaCuadradoMagico/cuadradoMagico.php">Practica cuadrado mágico</a>
                     </ol>
                 </ul>
                 
