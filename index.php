@@ -59,7 +59,7 @@
                         <a href="2/vocales_get.php">Vocales con GET</a>
                     </ol>
                     <ol>
-                        <a href="2/practicaCuadradoMagico/cuadradoMagico.php">Practica cuadrado mágico</a>
+                        <a href="2/practicaCuadradoMagico/cuadrado_Magico.php">Practica cuadrado mágico</a>
                     </ol>
                 </ul>
                 
