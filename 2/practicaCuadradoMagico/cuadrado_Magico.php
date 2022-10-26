@@ -18,7 +18,7 @@
         $cuadrado = array(
         array(4, 9, 2),
         array(3, 5, 7),
-        array(8, 1, 3)
+        array(8, 1, 1)
         );
 
         // Pintar tabla
