@@ -18,7 +18,7 @@
         $cuadrado = array(
         array(4, 9, 2),
         array(3, 5, 7),
-        array(8, 1, 1)
+        array(8, 1, 3)
         );
 
         // Pintar tabla
@@ -45,6 +45,7 @@
             $sumaDiagonalInversa = 0;
             $fraseNoEsCuadradoMagico = "<h1 class='noEsCuadradoMagico'>No es un cuadrado mágico</h1>";
             $fraseSiEsCuadradoMagico = "<h1 class='siEsCuadradoMagico'>Si es un cuadrado mágico</h1>";
+            $contadorDistintos = 0;
 
 
             for ($i=0; $i < count($cuadrado); $i++) { 
@@ -72,21 +73,35 @@
                 }
                 if ($sumaFila != $fila1) {
                     $filasDiferentes = $filasDiferentes . "<br><br>Fila ". ($i + 1);
+                    $contadorDistintos = $contadorDistintos + 1;
                 }
                 if ($sumaColumna != $fila1) {
                     $columnasDiferentes = $columnasDiferentes . "<br><br>Columna ". ($i + 1);
+                    $contadorDistintos = $contadorDistintos + 1;
                 }
             }
             if ($sumaDiagonalPrincipal != $fila1) {
                 $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal principal";
+                $contadorDistintos = $contadorDistintos + 1;
             }
             if ($sumaDiagonalInversa != $fila1) {
                 $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal inversa";
+                $contadorDistintos = $contadorDistintos + 1;
             }
 
-            $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 
-            son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes
-            <br><br>Las diagonales diferentes a 15 son: $diagonalesDiferentes";
+            if ($contadorDistintos == 0) {
+                
+                $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 
+                son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes
+                <br><br>Las diagonales diferentes a 15 son: $diagonalesDiferentes";
+
+            } else {
+                $fraseResultado = "<br><br>$fraseNoEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 
+                son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes
+                <br><br>Las diagonales diferentes a 15 son: $diagonalesDiferentes";
+            }
+
+            
 
 
             return $fraseResultado;
