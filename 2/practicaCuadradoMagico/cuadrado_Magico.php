@@ -18,20 +18,29 @@
         $cuadrado = array(
         array(4, 9, 2),
         array(3, 5, 7),
-        array(8, 1, 1)
+        array(8, 1, 6)
         );
 
-        // Pintar tabla
-            echo "<table>";
+        function dibujarMatriz($cuadrado){
+
+            $tablaHTML = "<table>";
+
             for ($i=0; $i < count($cuadrado); $i++) { 
-                echo "<tr>";
-                for ($j=0; $j < count($cuadrado[$i]); $j++) { 
                 
-                    echo "<td>".$cuadrado[$i][$j]."</td>";
+                $tablaHTML = $tablaHTML . "<tr>";
+
+                for ($j=0; $j < count($cuadrado[$i]); $j++) { 
+                    
+                    $tablaHTML = $tablaHTML . "<td>" . $cuadrado[$i][$j] . "</td>";
+                    
                 }
-                echo "</tr>";
+                $tablaHTML = $tablaHTML . "</tr>";
             }
-            echo "</table>";
+            $tablaHTML = $tablaHTML . "</table>";
+
+            return $tablaHTML;
+
+        }
 
         function analizarCuadradoMagico($cuadrado){
 
@@ -40,13 +49,12 @@
             $fila1 = 0;
             $filasDiferentes = "";
             $columnasDiferentes = "";
-            $diagonalesDiferentes = "";
+            $diagonalesDiferentes = "<br><br>Las diagonales diferentes a 15 son:";
             $sumaDiagonalPrincipal = 0;
             $sumaDiagonalInversa = 0;
             $fraseNoEsCuadradoMagico = "<h1 class='noEsCuadradoMagico'>No es un cuadrado mágico</h1>";
             $fraseSiEsCuadradoMagico = "<h1 class='siEsCuadradoMagico'>Si es un cuadrado mágico</h1>";
             $contadorDistintos = 0;
-
 
             for ($i=0; $i < count($cuadrado); $i++) { 
 
@@ -91,25 +99,19 @@
 
             if ($contadorDistintos == 0) {
                 
-                $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 
-                son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes
-                <br><br>Las diagonales diferentes a 15 son: $diagonalesDiferentes";
+                $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico Las sumas de cada fila, columna y diagonal dan:  $sumaFila";
 
             } else {
                 $fraseResultado = "<br><br>$fraseNoEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 
-                son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes
-                <br><br>Las diagonales diferentes a 15 son: $diagonalesDiferentes";
+                son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes $diagonalesDiferentes";
             }
-
-            
-
 
             return $fraseResultado;
 
         }
 
+        echo dibujarMatriz($cuadrado);
         echo analizarCuadradoMagico($cuadrado);
-
 
     ?>
     
