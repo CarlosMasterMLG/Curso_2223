@@ -49,7 +49,7 @@
             $columnasDiferentes = "";
             $diagonalesDiferentes = "<br><br>Las diagonales diferentes a 15 son:";
             $sumaDiagonalPrincipal = 0;
-            $sumaDiagonalInversa = 0;
+            $sumaDiagonalSecundaria = 0;
             $fraseNoEsCuadradoMagico = "<h1 class='noEsCuadradoMagico'>No es un cuadrado mágico</h1>";
             $fraseSiEsCuadradoMagico = "<h1 class='siEsCuadradoMagico'>Sí es un cuadrado mágico</h1>";
             $contadorDistintos = 0;
@@ -65,11 +65,11 @@
                     $sumaColumna = $sumaColumna + $cuadrado[$j][$i];
 
                     if ($i == $j) {
-                        $sumaDiagonalPrincipal = $sumaDiagonalPrincipal + $cuadrado[$i][$j];
+                        $sumaDiagonalSecundaria = $sumaDiagonalSecundaria + $cuadrado[$i][$j];
                     }
 
                     if ($i + $j == count($cuadrado)-1) {
-                        $sumaDiagonalInversa = $sumaDiagonalInversa + $cuadrado[$i][$j];
+                        $sumaDiagonalPrincipal = $sumaDiagonalPrincipal + $cuadrado[$i][$j];
                     }
                     
                 }
@@ -90,8 +90,8 @@
                 $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal principal";
                 $contadorDistintos = $contadorDistintos + 1;
             }
-            if ($sumaDiagonalInversa != $fila1) {
-                $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal inversa";
+            if ($sumaDiagonalSecundaria != $fila1) {
+                $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal secundaria";
                 $contadorDistintos = $contadorDistintos + 1;
             }
 
