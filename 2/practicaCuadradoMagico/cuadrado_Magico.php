@@ -51,7 +51,7 @@
             $sumaDiagonalPrincipal = 0;
             $sumaDiagonalInversa = 0;
             $fraseNoEsCuadradoMagico = "<h1 class='noEsCuadradoMagico'>No es un cuadrado mágico</h1>";
-            $fraseSiEsCuadradoMagico = "<h1 class='siEsCuadradoMagico'>Si es un cuadrado mágico</h1>";
+            $fraseSiEsCuadradoMagico = "<h1 class='siEsCuadradoMagico'>Sí es un cuadrado mágico</h1>";
             $contadorDistintos = 0;
 
             for ($i=0; $i < count($cuadrado); $i++) { 
