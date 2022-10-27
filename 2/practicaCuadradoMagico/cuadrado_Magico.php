@@ -13,8 +13,6 @@
         ini_set('display_errors', 'On');
         ini_set('html_errors', 0);
 
-        // Creamos objeto cuadrado
-
         $cuadrado = array(
         array(4, 9, 2),
         array(3, 5, 7),
