@@ -16,7 +16,7 @@
         $cuadrado = array(
         array(4, 9, 2),
         array(3, 5, 7),
-        array(8, 1, 6)
+        array(8, 1, 1)
         );
 
         function dibujarMatriz($cuadrado){
