@@ -45,7 +45,7 @@
             $fraseResultado = "";
             $fraseFila1 = "Respecto a la suma de la primera fila que es ";
             $fila1 = 0;
-            $filasDiferentes = "";
+            $filasDiferentes = "<br><br>Las filas diferentes son: ";
             $columnasDiferentes = "";
             $diagonalesDiferentes = "<br><br>Las diagonales diferentes a 15 son:";
             $sumaDiagonalPrincipal = 0;
@@ -71,7 +71,7 @@
                     if ($i + $j == count($cuadrado)-1) {
                         $sumaDiagonalPrincipal = $sumaDiagonalPrincipal + $cuadrado[$i][$j];
                     }
-                    
+
                 }
 
                 if ($i == 0) {
@@ -81,6 +81,7 @@
                     $filasDiferentes = $filasDiferentes . "<br><br>Fila ". ($i + 1);
                     $contadorDistintos = $contadorDistintos + 1;
                 }
+                
                 if ($sumaColumna != $fila1) {
                     $columnasDiferentes = $columnasDiferentes . "<br><br>Columna ". ($i + 1);
                     $contadorDistintos = $contadorDistintos + 1;
@@ -94,14 +95,17 @@
                 $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal secundaria";
                 $contadorDistintos = $contadorDistintos + 1;
             }
+            if ($sumaDiagonalPrincipal & $sumaDiagonalSecundaria == $sumaFila) {
+                $diagonalesDiferentes = "";
+            }
 
             if ($contadorDistintos == 0) {
                 
                 $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico Las sumas de cada fila, columna y diagonal dan:  $sumaFila";
 
             } else {
-                $fraseResultado = "<br><br>$fraseNoEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 
-                son: $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes $diagonalesDiferentes";
+                $fraseResultado = "<br><br>$fraseNoEsCuadradoMagico" . $fraseFila1 . $fila1 . ",
+                    $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes $diagonalesDiferentes";
             }
 
             return $fraseResultado;
