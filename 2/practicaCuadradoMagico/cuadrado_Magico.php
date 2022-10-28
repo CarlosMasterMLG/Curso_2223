@@ -45,9 +45,9 @@
             $fraseResultado = "";
             $fraseFila1 = "Respecto a la suma de la primera fila que es ";
             $fila1 = 0;
-            $filasDiferentes = "<br><br>Las filas diferentes son: ";
+            $filasDiferentes = "";
             $columnasDiferentes = "";
-            $diagonalesDiferentes = "<br><br>Las diagonales diferentes a 15 son:";
+            $diagonalesDiferentes = "";
             $sumaDiagonalPrincipal = 0;
             $sumaDiagonalSecundaria = 0;
             $fraseNoEsCuadradoMagico = "<h1 class='noEsCuadradoMagico'>No es un cuadrado mágico</h1>";
@@ -95,17 +95,13 @@
                 $diagonalesDiferentes = $diagonalesDiferentes . "<br><br>Diagonal secundaria";
                 $contadorDistintos = $contadorDistintos + 1;
             }
-            if ($sumaDiagonalPrincipal & $sumaDiagonalSecundaria == $sumaFila) {
-                $diagonalesDiferentes = "";
-            }
-
             if ($contadorDistintos == 0) {
                 
-                $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico Las sumas de cada fila, columna y diagonal dan:  $sumaFila";
+                $fraseResultado = "<br><br>$fraseSiEsCuadradoMagico La suma de cada fila, columna y diagonal da:  $sumaFila";
 
             } else {
-                $fraseResultado = "<br><br>$fraseNoEsCuadradoMagico" . $fraseFila1 . $fila1 . ",
-                    $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes $diagonalesDiferentes";
+                $fraseResultado = "<br><br>$fraseNoEsCuadradoMagico" . $fraseFila1 . $fila1 . ",<br><br>Las filas diferentes a $fila1 son: 
+                    $filasDiferentes<br><br>Las columas diferentes a $fila1 son:$columnasDiferentes <br><br>Las diagonales diferentes a $fila1 son: $diagonalesDiferentes";
             }
 
             return $fraseResultado;
