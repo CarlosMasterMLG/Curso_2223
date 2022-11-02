@@ -61,6 +61,9 @@
                     <ol>
                         <a href="2/practicaCuadradoMagico/cuadrado_Magico.php">Practica cuadrado mágico</a>
                     </ol>
+                    <ol>
+                        <a href="2/practicaCuadradoMagico/test_cuadradoMagico.php">Tests del cuadrado mágico</a>
+                    </ol>
                 </ul>
                 
 
