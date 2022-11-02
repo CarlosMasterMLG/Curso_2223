@@ -10,6 +10,5 @@ function test_cuadrado_1(){
 
 }
 
-echo "<br><br>hola";
-test("test_cuadrado_1");
+//test("test_cuadrado_1");
 ?>
