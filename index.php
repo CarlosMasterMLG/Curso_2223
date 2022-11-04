@@ -60,9 +60,13 @@
                     </ol>
                     <ol>
                         <a href="2/practicaCuadradoMagico/cuadrado_Magico.php">Practica cuadrado mágico</a>
-                    </ol>
+                        </ol>
                     <ol>
                         <a href="2/practicaCuadradoMagico/test_cuadradoMagico.php">Tests del cuadrado mágico</a>
+                    </ol>
+                    </ol>
+                    <ol>
+                        <a href="2/practicaCartelera/peliculas.php">Cartelera</a>
                     </ol>
                 </ul>
                 
