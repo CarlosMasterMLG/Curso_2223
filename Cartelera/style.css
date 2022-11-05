@@ -5,13 +5,15 @@
     width: 100%;
 }
 .primera_caja{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(220, 95, 0);
     height: 10%;
     padding: 10px;
 }
 .segunda_caja{
-    background-color: rgb(220, 95, 0);
+    background-color: rgb(0, 0, 0); 
     height: 50%;
+    border-top: 2px solid rgb(220, 95, 0);
+    border-bottom: 2px solid rgb(220, 95, 0);
 }
 .primera_columna{
     float:left;
@@ -22,8 +24,8 @@
     float:left;
     height: 100%;
     width:33%;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid rgb(220, 95, 0);
+    border-right: 2px solid rgb(220, 95, 0);
 }
 .tercera_columna{
     float:left;
@@ -31,7 +33,7 @@
     width: 33%;
 }
 .tercera_caja{
-    background-color: rgb(207, 10, 10);
+    background-color: rgb(220, 95, 0);
     height: 10%;
 }
 img{
@@ -44,15 +46,12 @@ img{
 }
 h1{
     margin: 4px;
+    color: white;
 }
 p{
     margin: 4px;
+    color: white;
 }
 a{
     color: white;
-}
-hr {
-    height: 2px;
-    background-color: black;
-    border: none;
 }

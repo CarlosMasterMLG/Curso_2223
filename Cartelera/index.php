@@ -10,7 +10,7 @@
             <a href="pagina1.php">Primera categoría</a>
             <a href="pagina2.php">Segunda categoría</a>
         </div>
-        <hr>
+
         <div class="segunda_caja">
 
             <div class="primera_columna">
@@ -40,7 +40,7 @@
                     forma de sus víctimas...</p>
             </div>
         </div>
-        <hr>
+        
         <div class="segunda_caja">
 
             <div class="primera_columna">
@@ -71,7 +71,7 @@
                 luchar contra un monstruo tras otro para sobrevivir hasta el día siguiente.</p>
             </div>            
         </div>
-        <hr>
+        
         <div class="segunda_caja">
 
             <div class="primera_columna">
