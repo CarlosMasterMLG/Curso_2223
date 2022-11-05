@@ -1,38 +1,58 @@
 * {margin: 0px; padding: 0px;} /* margin es el margen exterior. padding, margen interior */
+.contenedor{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
 .primera_caja{
-    background-color: rgb(23, 173, 161);
-    height: 25%;
+    background-color: rgb(0, 0, 0);
+    height: 10%;
+    padding: 10px;
 }
 .segunda_caja{
-    background-color: red;
+    background-color: rgb(220, 95, 0);
     height: 50%;
-}
-.tercera_caja{
-    background-color: yellow;
-    height: 25%;
 }
 .primera_columna{
     float:left;
     height: 100%;
-    width:34%;
-    background-color: green;
-
+    width:33%;
 }
 .segunda_columna{
     float:left;
     height: 100%;
     width:33%;
-    background-color: darkblue;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
 }
 .tercera_columna{
     float:left;
     height: 100%;
-    width:34%;
-    background-color: white;
+    width: 33%;
 }
-
-.contenedor{
+.tercera_caja{
+    background-color: rgb(207, 10, 10);
+    height: 10%;
+}
+img{
+    height: 98%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    display: block;
+}
+h1{
+    margin: 4px;
+}
+p{
+    margin: 4px;
+}
+a{
+    color: white;
+}
+hr {
+    height: 2px;
     background-color: black;
-    height: 100%;
-    width: 100%;
+    border: none;
 }
