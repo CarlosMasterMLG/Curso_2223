@@ -65,9 +65,6 @@
                         <a href="2/practicaCuadradoMagico/test_cuadradoMagico.php">Tests del cuadrado mágico</a>
                     </ol>
                     </ol>
-                    <ol>
-                        <a href="2/practicaCartelera/peliculas.php">Cartelera</a>
-                    </ol>
                 </ul>
                 
 
@@ -76,12 +73,7 @@
                 <?php include('calculadora/calculadora_usuario.php'); ?>
             </div>
             <div class="tercera_columna">
-
-                <div class="img">
-                    <img src="/imgs/guts.jpg" alt="no funciona la imagen">
-                </div>
-
-
+                    
             </div>
 
         </div>
