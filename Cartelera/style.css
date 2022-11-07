@@ -1,4 +1,7 @@
-* {margin: 0px; padding: 0px;} /* margin es el margen exterior. padding, margen interior */
+*{
+    margin: 0px;
+    padding: 0px;
+} /* margin es el margen exterior. padding, margen interior */
 .contenedor{
     background-color: black;
     height: 100%;
