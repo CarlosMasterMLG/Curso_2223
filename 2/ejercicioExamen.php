@@ -49,6 +49,19 @@
 
         echo '</tr></table><br><br><br>';
 
+        echo $frase . "<br><br>";
+
+        $arrayPalabras = explode(" ", $frase);
+
+        
+        echo '<table><tr>';
+        for ($i=0; $i < count($arrayPalabras); $i++) { 
+            
+            echo '<td>'.$arrayPalabras[$i].'</td>';
+            
+        }
+        echo '</tr></table>';
+        
     ?>
 </body>
 </html>
