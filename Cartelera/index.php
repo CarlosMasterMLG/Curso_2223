@@ -7,9 +7,9 @@
     <div class="contenedor">
         <div class="primera_caja">
             <h1>Carlos Productions Cinema</h1>
-            <a href="index.php">INICIO</a>
-            <a href="pagina1.php">Primera categoría</a>
-            <a href="pagina2.php">Segunda categoría</a>
+            <a>CATEGORIAS:</a>
+            <a href="pagina1.php">TERROR</a>
+            <a href="pagina2.php">CIENCIA FICCIÓN</a>
         </div>
 
         <div class="segunda_caja">
