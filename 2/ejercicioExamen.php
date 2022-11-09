@@ -47,7 +47,7 @@
 
         }
 
-        echo '</tr></table>';
+        echo '</tr></table><br><br><br>';
 
     ?>
 </body>
