@@ -9,11 +9,13 @@
 <body>
     <?php
 
-        $frase = "LA CASA ES BLANCA Y LA NUBE ES GRIS<br><br>";
-        echo $frase;
+        $fraseOriginal = "La casa es blanca y la nube es gris";
+        echo $fraseOriginal . "<br><br>";
+        $frase = strtoupper($fraseOriginal);
+        echo $frase . "<br><br>";
 
-        $abecedario = array('A','B','C', 'D', 'E', 'F', 'G');
-        $arrayNumeros = array(0,0,0,0,0,0,0);
+        $abecedario = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+        $arrayNumeros = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 
         $fraseArray = str_split($frase, 1);
 
