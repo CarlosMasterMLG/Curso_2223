@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table, tr, td{
+            border: 3px solid black;
+            border-collapse:collapse;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -60,7 +66,7 @@
         }
         echo '</tr></table>';
 
-        echo '<table><tr>';
+        echo '<br><table><tr>';
         for ($i=0; $i < count($arrayPalabras); $i++) { 
             
             echo '<td>'.$arrayPalabras[$i].'</td>';
