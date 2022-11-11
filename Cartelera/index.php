@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Carlos Productions Cinema</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleTerror.css">
 </head>
 <body>
     <div class="contenedor">
@@ -13,6 +13,7 @@
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/the_thing.jpg" alt="The Thing">
             </div>
@@ -39,9 +40,11 @@
                     descubren que la bestia, de origen desconocido, puede asumir la 
                     forma de sus víctimas...</p>
             </div>
+            <div class="bordeDerecho"></div>
         </div>
         
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/willys_wonderland.jpg" alt="Willy's Wonderland">
             </div>
@@ -68,10 +71,12 @@
                 Willy's Wonderland, un local de entretenimiento familiar abandonado hace ya 
                 tiempo, que se acaba convirtiendo en una auténtica pesadilla. Allí tendrá que 
                 luchar contra un monstruo tras otro para sobrevivir hasta el día siguiente.</p>
-            </div>            
+            </div>     
+            <div class="bordeDerecho"></div>       
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/alien_el_octavo_pasajero.jpg" alt="Alien">
             </div>
@@ -95,9 +100,11 @@
                 deshabitado. La nave se dirige entonces al extraño planeta para investigar el origen 
                 de la comunicación.</p>
             </div>
+            <div class="bordeDerecho"></div>
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/el_amanecer_de_los_muertos.jpg" alt="Amanecer de los muertos">
             </div>
@@ -127,9 +134,11 @@
                 un centro comercial, donde deben aprender no sólo a protegerse de las hordas de zombies, 
                 sino también a convivir. </p>
             </div>
+            <div class="bordeDerecho"></div>
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/get_out.jpg" alt="Get Out">
             </div>
@@ -156,9 +165,11 @@
                 su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez 
                 más inquietantes le llevan a descubrir una verdad inimaginable.</p>
             </div>
+            <div class="bordeDerecho"></div>
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/jaws.jpg" alt="Jaws">
             </div>
@@ -186,9 +197,11 @@
                 de tiburones, un oceanógrafo y el jefe de la policía local se unen para intentar 
                 capturar al escualo.</p>
             </div>
+            <div class="bordeDerecho"></div>
         </div>
         
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/midsommar.jpg" alt="Midsommar">
             </div>
@@ -214,9 +227,11 @@
                 sol no se pone nunca, poco a poco se convierte en una oscura pesadilla cuando los misteriosos 
                 aldeanos les invitan a participar en sus perturbadoras actividades festivas.</p>
             </div>            
+            <div class="bordeDerecho"></div>
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/the_exorcist.jpg" alt="El exorcista">
             </div>
@@ -245,9 +260,11 @@
                 practicar un exorcismo... Adaptación de la novela de William Peter Blatty que se 
                 inspiró en un exorcismo real ocurrido en Washington en 1949.</p>
             </div>            
+            <div class="bordeDerecho"></div>
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/the_shining.jpg" alt="El resplandor">
             </div>
@@ -276,9 +293,11 @@
                 tiempo que Jack empieza a padecer inquietantes trastornos de personalidad, se 
                 suceden extraños y espeluznantes fenómenos paranormales.</p>
             </div>            
+            <div class="bordeDerecho"></div>
         </div>
 
         <div class="segunda_caja">
+            <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
                 <img src="imgs/terror/train_to_busan.jpg" alt="Train to Busan">
             </div>
@@ -302,6 +321,7 @@
                 altercados. Los pasajeros de un tren KTX que viaja de Seúl a Busan tendrán que 
                 luchar por su supervivencia.</p>
             </div>            
+            <div class="bordeDerecho"></div>
         </div>
         
         <div class="tercera_caja"></div>

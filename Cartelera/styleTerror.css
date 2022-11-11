@@ -18,6 +18,18 @@
     border-top: 2px solid rgb(220, 95, 0);
     border-bottom: 2px solid rgb(220, 95, 0);
 }
+.bordeIzquierdo{
+    background-color: rgb(220, 95, 0);
+    float: left;
+    width: 5%;
+    height: 100%;
+}
+.bordeDerecho{
+    background-color: rgb(220, 95, 0);
+    float: right;
+    width: 5%;
+    height: 100%;
+}
 .primera_columna{
     float:left;
     height: 100%;
@@ -26,7 +38,7 @@
 .segunda_columna{
     float:left;
     height: 100%;
-    width:49%;
+    width:39%;
     border-left: 4px solid rgb(220, 95, 0);
     border-right: 4px solid rgb(220, 95, 0);
 }
@@ -38,6 +50,17 @@
 .tercera_caja{
     background-color: rgb(220, 95, 0);
     height: 10%;
+}
+.puntuacion{
+    margin: auto;
+    margin-top: 50%;
+    background-color: rgb(255, 0, 0);
+    height: 10%;
+    width: 30%;
+}
+.votacion{
+    margin: auto;
+    color: black;
 }
 img{
     height: 98%;
