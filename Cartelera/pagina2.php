@@ -1,13 +1,13 @@
 <html>
 <head>
-    <title>Segunda categoría</title>
+    <title>Ciencia Ficción</title>
     <link rel="stylesheet" href="styleCF.css">
 </head>
 <body>
     <div class="contenedor">
-    <div class="primera_caja">
+        <div class="primera_caja">
             <h1>Carlos Productions Cinema</h1>
-            <a>CATEGORIAS:</a>
+            <a href="index.php">CATEGORIAS:</a>
             <a href="pagina1.php">TERROR</a>
             <a href="pagina2.php">CIENCIA FICCIÓN</a>
         </div>

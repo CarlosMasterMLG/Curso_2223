@@ -7,11 +7,10 @@
     <div class="contenedor">
         <div class="primera_caja">
             <h1>Carlos Productions Cinema</h1>
-            <a>CATEGORIAS:</a>
+            <a href="index.php">CATEGORIAS:</a>
             <a href="pagina1.php">TERROR</a>
             <a href="pagina2.php">CIENCIA FICCIÓN</a>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -74,7 +73,6 @@
             </div>     
             <div class="bordeDerecho"></div>       
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -102,7 +100,6 @@
             </div>
             <div class="bordeDerecho"></div>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -136,7 +133,6 @@
             </div>
             <div class="bordeDerecho"></div>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -167,7 +163,6 @@
             </div>
             <div class="bordeDerecho"></div>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -229,7 +224,6 @@
             </div>            
             <div class="bordeDerecho"></div>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -262,7 +256,6 @@
             </div>            
             <div class="bordeDerecho"></div>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -295,7 +288,6 @@
             </div>            
             <div class="bordeDerecho"></div>
         </div>
-
         <div class="segunda_caja">
             <div class="bordeIzquierdo"></div>
             <div class="primera_columna">
@@ -328,4 +320,3 @@
     <div>
 </body>
 </html>
-
