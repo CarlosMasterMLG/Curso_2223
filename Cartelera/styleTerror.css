@@ -53,14 +53,10 @@
 }
 .puntuacion{
     margin: auto;
-    margin-top: 50%;
-    background-color: rgb(255, 0, 0);
-    height: 10%;
+    margin-top: auto;
+    background-color: rgb(153, 147, 147);
+    height: 16%;
     width: 30%;
-}
-.votacion{
-    margin: auto;
-    color: black;
 }
 img{
     height: 98%;
