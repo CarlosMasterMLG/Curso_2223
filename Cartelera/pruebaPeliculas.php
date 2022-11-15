@@ -2,23 +2,25 @@
 <head>
     <?php
         $style;
-
+        $titulo;
         $numCategoria = $_GET['categoria'];
-        
         if ($numCategoria==1) {
             $style = 'stylePrueba';
+            $titulo = 'TERROR';
         } else{
             $style = 'styleCF';
+            $titulo = 'CIENCIA FICCION';
         }
-
     ?>
-    <title>Prueba</title>
+    <title><?php echo $titulo?></title>
     <link rel="stylesheet" href="<?php echo $style?>.css">
+    <link rel="shortut icon" type="image/png" href="imgs/ghostface_icon.png" sizes="32x32">
+    
 </head>
 <body>
     <div class="contenedor">
         <div class="primera_caja">
-            <h1>Carlos Productions Cinema</h1>
+            <h1>TERROR</h1>
             <a href="index.php">INICIO</a>
         </div>
 
