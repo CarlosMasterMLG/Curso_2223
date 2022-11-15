@@ -1,7 +1,19 @@
 <html>
 <head>
+    <?php
+        $style;
+
+        $numCategoria = $_GET['categoria'];
+        
+        if ($numCategoria==1) {
+            $style = 'stylePrueba';
+        } else{
+            $style = 'styleCF';
+        }
+
+    ?>
     <title>Prueba</title>
-    <link rel="stylesheet" href="stylePrueba.css">
+    <link rel="stylesheet" href="<?php echo $style?>.css">
 </head>
 <body>
     <div class="contenedor">
