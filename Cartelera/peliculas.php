@@ -8,11 +8,11 @@
         if ($numCategoria==1) {
             $style = 'styleTerror';
             $titulo = 'TERROR';
-            $icon = 'imgs/ghostface_icon.png';
+            $icon = 'imgs/terror/icon/ghostface_icon.png';
         } else{
             $style = 'styleCF';
             $titulo = 'CIENCIA FICCION';
-            $icon = 'imgs/darthvader_icon.png';
+            $icon = 'imgs/ciencia_ficción/icon/darthvader_icon.png';
         }
     ?>
     <title><?php echo $titulo?></title>
@@ -53,6 +53,7 @@
         for ($i=0; $i < count($posters); $i++) { 
                 
             $sinopsisReducida = substr($sinopsis[$i], 0, 280);
+            $terrorFicha = $i+1;
 
             echo "<div class='segunda_caja'>
             <div class='bordeIzquierdo'></div>
@@ -69,23 +70,9 @@
             <div class='tercera_columna'>
                 <div class='puntuacion'>
                     <p>Puntuación: $puntuaciones[$i]</p>
-                    <p>Tu puntuación</p>
-                    <select name='notas' id='notas'>
-                        <option value='No vista'>No vista</option>
-                        <option value='10'>10 Excelente</option>
-                        <option value='9'>9 Muy buena</option>
-                        <option value='8'>8 Notable</option>
-                        <option value='7'>7 Buena</option>
-                        <option value='6'>6 Interesante</option>
-                        <option value='5'>5 Pasable</option>
-                        <option value='4'>4 Regular</option>
-                        <option value='3'>3 Floja</option>
-                        <option value='2'>2 Mala</option>
-                        <option value='1'>1 Muy mala</option>
-                    </select>
                 </div>
             <div class='verFicha'>
-                <a href=''>Ver Ficha</a>
+                <a href='ficha.php?terrorFicha=$terrorFicha'>Ver Ficha</a>
             </div>
         </div>
         <div class='bordeDerecho'></div>
@@ -128,6 +115,7 @@
             for ($i=0; $i < count($posters); $i++) { 
                 
                 $sinopsisReducida = substr($sinopsis[$i], 0, 280);
+                $ficcionFicha = $i+1;
 
                 echo "<div class='segunda_caja'>
                 <div class='bordeIzquierdo'></div>
@@ -144,23 +132,9 @@
                 <div class='tercera_columna'>
                 <div class='puntuacion'>
                     <p>Puntuación: $puntuaciones[$i]</p>
-                    <p>Tu puntuación</p>
-                    <select name='notas' id='notas'>
-                        <option value='No vista'>No vista</option>
-                        <option value='10'>10 Excelente</option>
-                        <option value='9'>9 Muy buena</option>
-                        <option value='8'>8 Notable</option>
-                        <option value='7'>7 Buena</option>
-                        <option value='6'>6 Interesante</option>
-                        <option value='5'>5 Pasable</option>
-                        <option value='4'>4 Regular</option>
-                        <option value='3'>3 Floja</option>
-                        <option value='2'>2 Mala</option>
-                        <option value='1'>1 Muy mala</option>
-                    </select>
                 </div>
             <div class='verFicha'>
-                <a href=''>Ver Ficha</a>
+                <a href='ficha.php?ficcionFicha=$ficcionFicha'>Ver Ficha</a>
             </div>
         </div>
         <div class='bordeDerecho'></div>
