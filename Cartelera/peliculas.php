@@ -6,7 +6,7 @@
         $icon;
         $numCategoria = $_GET['categoria'];
         if ($numCategoria==1) {
-            $style = 'styleTERROR';
+            $style = 'styleTerror';
             $titulo = 'TERROR';
             $icon = 'imgs/ghostface_icon.png';
         } else{
