@@ -26,14 +26,13 @@
     <link rel="shortut icon" type="image/png" href="imgs/terror/icon/xenomorfo.jpg" sizes="32x32">
 </head>
 <body>
-    <div class="contenedor">
-        <div class="primera_caja">
-            <h1>ALIEN, EL OCTAVO PASAJERO</h1>
-            <a href="index.php">INICIO</a>
-            <a href="peliculas.php?categoria=1">VOLVER</a>
-        </div>
-
+    
         <?php
+                    echo "<div class='contenedor'>
+                    <div class='primera_caja'>
+                        <h1>ALIEN, EL OCTAVO PASAJERO</h1>
+                        <a href='index.php'>INICIO</a>
+                    </div>";
                     echo "<div class='segunda_caja'>
                     <div class='bordeIzquierdo'></div>
                     <div class='primera_columna'>
