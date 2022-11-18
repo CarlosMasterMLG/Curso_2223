@@ -104,7 +104,7 @@
                                 <option value='2'>2 Mala</option>
                                 <option value='1'>1 Muy mala</option>
                             </select>
-                            <a href='ficha.php?_POST['10']'>Enviar voto</a>
+                            <a href='voto.php?_POST[10]'>Enviar voto</a>
                         </div>
                     </div>
                     <div class='bordeDerecho'></div>
