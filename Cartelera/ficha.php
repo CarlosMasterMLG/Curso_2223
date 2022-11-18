@@ -2,69 +2,94 @@
 <head>
     <?php
         $style;
-        $titulo;
         $icon;
+        $numFicha = $_GET['ficha'];
 
-        $numFichaTerror = $_GET['terrorFicha'];
-        $numFichaFiccion = $_GET['ficcionFicha'];
-        
-        if ($numFichaTerror==10||$numFichaTerror==1||$numFichaTerror==2||$numFichaTerror==3||$numFichaTerror==4||$numFichaTerror==5||$numFichaTerror==6
-            ||$numFichaTerror==7||$numFichaTerror==8||$numFichaTerror==9) {
+        if ($numFicha<11) {
             $style = 'styleFichaTerror';
-        } 
-        
-        if ($numFichaFiccion==10||$numFichaFiccion==1||$numFichaFiccion==2||$numFichaFiccion==3||$numFichaFiccion==4||$numFichaFiccion==5||$numFichaFiccion==6
-        ||$numFichaFiccion==7||$numFichaFiccion==8||$numFichaFiccion==9) {
+            $icon = 'imgs/terror/icon/ghostface_icon.png';
+        }else{
             $style = 'styleFichaFiccion';
+            $icon = 'imgs/ciencia_ficción/icon/darthvader_icon.png';
     }
-        
-        
 
     ?>
     <title>FICHA</title>
     <link rel="stylesheet" href="<?php echo $style?>.css">
-    <link rel="shortut icon" type="image/png" href="imgs/terror/icon/xenomorfo.jpg" sizes="32x32">
+    <link rel="shortut icon" type="image/png" href="<?php echo $icon?>" sizes="32x32">
 </head>
 <body>
     
         <?php
+
+        require('peliculaObj.php');
+
+                    $titulo;
+                    $portada;
+                    $anyo;
+                    $duracion;
+                    $direccion;
+                    $guion;
+                    $musica;
+                    $fotografia;
+                    $reparto;
+                    $companyias;
+                    $generos;
+                    $sinopsis;
+                    $puntuacion;
+
+                    for ($i=0; $i < count($peliculas); $i++) { 
+
+                        if ($_GET['ficha'] == $peliculas[$i]->getId()) {
+
+                            $titulo = $peliculas[$i]->getTitulo();
+                            $portada = $peliculas[$i]->getPortada();
+                            $anyo = $peliculas[$i]->getAnyo();
+                            $duracion = $peliculas[$i]->getDuracion();
+                            $direccion = $peliculas[$i]->getDireccion();
+                            $guion = $peliculas[$i]->getGuion();
+                            $musica = $peliculas[$i]->getMusica();
+                            $fotografia = $peliculas[$i]->getFotografia();
+                            $reparto = $peliculas[$i]->getReparto();
+                            $companyias = $peliculas[$i]->getCompanyias();
+                            $generos = $peliculas[$i]->getGenero();
+                            $sinopsis = $peliculas[$i]->getSinopsis();
+                            $puntuacion = $peliculas[$i]->getPuntuacion();
+                            
+                        }
+                    }
+
                     echo "<div class='contenedor'>
                     <div class='primera_caja'>
-                        <h1>ALIEN, EL OCTAVO PASAJERO</h1>
+                        <h1>$titulo</h1>
                         <a href='index.php'>INICIO</a>
                     </div>";
                     echo "<div class='segunda_caja'>
                     <div class='bordeIzquierdo'></div>
                     <div class='primera_columna'>
-                        <img src=imgs/terror/alien_el_octavo_pasajero.jpg>
+                        <img src=$portada>
                     </div>
                     <div class='segunda_columna'>
                         <br>
-                        <p>Año: 1979</p><br>
-                        <p>Duración:  116 min.</p><br>
-                        <p>Dirección: Ridley Scott</p><br>
-                        <p>Guion: Dan O'Bannon. Historia: Ronald Shusett. Personaje: H.R. Giger</p><br>
-                        <p>Música: Jerry Goldsmith</p><br>
-                        <p>Fotografía: Derek Vanlint</p><br>
-                        <p>Reparto: 
-                        Sigourney Weaver, John Hurt, Yaphet Kotto, Tom Skerritt, Veronica Cartwright, Harry Dean Stanton, Ian Holm
-                    </p><br>
-                        <p>Compañías: 20th Century Fox, Brandywine Productions
-                        </p><br>
-                        <p>Género: Ciencia ficción. Terror | Extraterrestres. Aventura espacial. Película de culto </p>
+                        <p>Año: $anyo</p><br>
+                        <p>Duración:  $duracion</p><br>
+                        <p>Dirección: $direccion</p><br>
+                        <p>Guion: $guion</p><br>
+                        <p>Música: $musica</p><br>
+                        <p>Fotografía: $fotografia</p><br>
+                        <p>Reparto: $reparto</p><br>
+                        <p>Compañías: $companyias</p><br>
+                        <p>Género: $generos</p>
                     </div>
                     <div class='tercera_columna'>
                         <div class='sinopsis'>
                         <br>
                         <p>Sinopsis<br><br>
-                        De regreso a la Tierra, la nave de carga Nostromo interrumpe su viaje y despierta a sus siete 
-                        tripulantes. El ordenador central, MADRE, ha detectado la misteriosa transmisión de una forma 
-                        de vida desconocida, procedente de un planeta cercano aparentemente deshabitado. La nave se 
-                        dirige entonces al extraño planeta para investigar el origen de la comunicación.
+                        $sinopsis
                         </p>
                         </div>
                         <div class='puntuacion'>
-                            <p>Puntuación: 8</p>
+                            <p>Puntuación: $puntuacion</p>
                             <p>Tu voto</p>
                             <select name='notas' id='notas'>
                                 <option value='No vista'>No vista</option>
