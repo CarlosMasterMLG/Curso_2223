@@ -52,12 +52,11 @@
     height: 10%;
 }
 .sinopsis{
-    height: 85%;
+    height: 80%;
     width: 100%;
 }
 .puntuacion{
     margin: auto;
-    margin-top: auto;
     background-color: rgb(153, 147, 147);
     height: 10%;
     width: 30%;
