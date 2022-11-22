@@ -75,7 +75,7 @@
         <div class='bordeDerecho'></div>
         </div>";
         }
-        echo "<div class='tercera_caja'></div>";
+        echo "<div class='tercera_caja'></div></div>";
         ?>
 </body>
 </html>
