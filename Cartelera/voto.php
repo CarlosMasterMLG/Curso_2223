@@ -11,8 +11,19 @@
 
         echo "<br>";
 
-        echo $_POST["notas"];
+        $nota = $_POST["notas"];
 
+        $votos = array();
+
+        if ($nota < 11 && $nota > 0) {
+            echo "el dato es integer";
+            $votos = array($nota);
+        } else {
+            echo "el dato es String";
+        }
+
+        echo "<br>El valor del array votos es: ".$votos[0];
+        
     ?>
 </body>
 </html>
