@@ -91,6 +91,7 @@
                         <div class='puntuacion'>
                             <p>Puntuación: $puntuacion</p>
                             <p>Tu voto</p>
+                            <form action='voto.php' method='POST'>   
                             <select name='notas' id='notas'>
                                 <option value='No vista'>No vista</option>
                                 <option value='10'>10 Excelente</option>
@@ -104,7 +105,8 @@
                                 <option value='2'>2 Mala</option>
                                 <option value='1'>1 Muy mala</option>
                             </select>
-                            <a href='voto.php?_POST[10]'>Enviar voto</a>
+                            <input type='submit' value='Enviar voto'>
+                            </form>
                         </div>
                     </div>
                     <div class='bordeDerecho'></div>
