@@ -38,7 +38,7 @@
             <div class='tercera_columna'>
             </div>      
         </div>
-    <div>";
+    <div>"
         
     ?>
 </body>
