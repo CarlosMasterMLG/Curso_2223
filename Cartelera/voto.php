@@ -1,8 +1,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortut icon" type="image/png" href="imgs/check-lg.svg" sizes="32x32">
     <title>Voto</title>
@@ -12,7 +10,7 @@
         //echo "<a href='index.php'>Volver a la página de inicio</a>";
 
         //echo "<br>";
-
+        
         $nota = $_POST["notas"];
 
         $votos = array();
@@ -38,7 +36,7 @@
             <div class='tercera_columna'>
             </div>      
         </div>
-    <div>"
+    <div>";
         
     ?>
 </body>
