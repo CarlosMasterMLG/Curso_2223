@@ -24,6 +24,7 @@
 
         require('peliculaObj.php');
 
+                    $id;
                     $titulo;
                     $portada;
                     $anyo;
@@ -42,6 +43,7 @@
 
                         if ($_GET['ficha'] == $peliculas[$i]->getId()) {
 
+                            $id = $peliculas[$i]->getId();
                             $titulo = $peliculas[$i]->getTitulo();
                             $portada = $peliculas[$i]->getPortada();
                             $anyo = $peliculas[$i]->getAnyo();
@@ -62,6 +64,7 @@
                     echo "<div class='contenedor'>
                     <div class='primera_caja'>
                         <h1>$titulo</h1>
+                        <h1>$id</h1>
                         <a href='index.php'>INICIO</a>
                     </div>";
                     echo "<div class='segunda_caja'>
@@ -92,19 +95,9 @@
                             <p>Puntuación: $puntuacion</p>
                             <p>Tu voto</p>
                             <form action='voto.php' method='POST'>   
-                            <select name='notas' id='notas'>
-                                <option value='No vista'>No vista</option>
-                                <option value='10'>10 Excelente</option>
-                                <option value='9'>9 Muy buena</option>
-                                <option value='8'>8 Notable</option>
-                                <option value='7'>7 Buena</option>
-                                <option value='6'>6 Interesante</option>
-                                <option value='5'>5 Pasable</option>
-                                <option value='4'>4 Regular</option>
-                                <option value='3'>3 Floja</option>
-                                <option value='2'>2 Mala</option>
-                                <option value='1'>1 Muy mala</option>
-                            </select>
+                            <label for=$id>Votación</label><br>
+                            <input id=$id name = 'Nombre campo 1' type = 'text'><br>
+                            <input id=$id name = 'Nombre campo 2' type = 'hidden' value='1'><br>
                             <input type='submit' value='Enviar voto'>
                             </form>
                         </div>
@@ -113,7 +106,12 @@
                 </div>";
 
                 echo "<div class='tercera_caja'></div></div>";
+                //en la linea 108, en el input para el post,
+                //hay que mandar el id de la pelicula de la ficha
+                
         ?>
+
+        
         
 </body>
 </html>

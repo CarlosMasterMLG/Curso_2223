@@ -7,36 +7,11 @@
 </head>
 <body>
     <?php
-        //echo "<a href='index.php'>Volver a la página de inicio</a>";
-
-        //echo "<br>";
         
-        $nota = $_POST["notas"];
+        echo "campo 1 = ".$_POST['nombre_campo1']."<br>";
+        echo "campo 2 = ".$_POST['nombre_campo2']."<br>";
 
-        $votos = array();
-
-        if ($nota < 11 && $nota > 0) {
-            //echo "El dato es integer";
-            $votos = array($nota);
-        } else {
-            //echo "El dato es String";
-        }
-
-        //echo "<br>El valor del array votos es: ".$votos[0];
-
-        echo "<div class='contenedor'>
-        <div class='primera_caja'></div>
-        <div class='segunda_caja'>
-            <div class='primera_columna'>
-            </div>
-            <div class='segunda_columna'>
-                    <h1>Voto guardado</h1>
-                    <a href='index.php'>INICIO</a>
-            </div>
-            <div class='tercera_columna'>
-            </div>      
-        </div>
-    <div>";
+        
         
     ?>
 </body>
