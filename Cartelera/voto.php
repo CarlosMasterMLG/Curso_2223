@@ -19,7 +19,7 @@
                         </div>
                     <div class='segunda_columna'>
                         <h1>Voto guardado</h1>
-                        <a href='index.php'>INICIO</a>
+                        <a href='index.php'>Inicio</a>
                     </div>
                     <div class='tercera_columna'>
                     </div>      

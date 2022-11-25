@@ -115,8 +115,6 @@
                 </div>";
 
                 echo "<div class='tercera_caja'></div></div>";
-                //en la linea 108, en el input para el post,
-                //hay que mandar el id de la pelicula de la ficha
                 
         ?>
 
