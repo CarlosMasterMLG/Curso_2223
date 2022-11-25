@@ -64,7 +64,6 @@
                     echo "<div class='contenedor'>
                     <div class='primera_caja'>
                         <h1>$titulo</h1>
-                        <h1>$id</h1>
                         <a href='index.php'>INICIO</a>
                     </div>";
                     echo "<div class='segunda_caja'>
@@ -95,10 +94,20 @@
                             <p>Puntuación: $puntuacion</p>
                             <p>Tu voto</p>
                             <form action='voto.php' method='POST'>   
-                            <label for=$id>Votación</label><br>
-                            <input id=$id name = 'Nombre campo 1' type = 'text'><br>
-                            <input id=$id name = 'Nombre campo 2' type = 'hidden' value='1'><br>
-                            <input type='submit' value='Enviar voto'>
+                                <select name='voto'>
+                                    <option value='default'>No vista</option>
+                                    <option value=10>10</option>
+                                    <option value=9>9</option>
+                                    <option value=8>8</option>
+                                    <option value=7>7</option>
+                                    <option value=6>6</option>
+                                    <option value=5>5</option>
+                                    <option value=4>4</option>
+                                    <option value=3>3</option>
+                                    <option value=2>2</option>
+                                    <option value=1>1</option>
+                                </select>
+                                <input type='submit' value='Enviar'>
                             </form>
                         </div>
                     </div>
