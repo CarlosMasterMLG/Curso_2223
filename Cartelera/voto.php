@@ -6,10 +6,7 @@
 </head>
 <body>
     
-
-    
     <?php
-        
 
         if ($_POST['voto'] != 'default') {
             $votos = $votos + 1;
@@ -30,7 +27,6 @@
                 <div>";
         
     ?>
-
 
 </body>
 </html>
