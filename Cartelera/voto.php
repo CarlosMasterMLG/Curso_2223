@@ -7,7 +7,7 @@
 <body>
     
     <?php
-
+        $votos = 0;
         if ($_POST['voto'] != 'default') {
             $votos = $votos + 1;
         }
