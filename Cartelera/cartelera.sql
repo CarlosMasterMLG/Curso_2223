@@ -25,7 +25,7 @@ CREATE TABLE `T_Peliculas` (
         REFERENCES T_Categorias (`ID`)
 );
 
-
+select * from T_Peliculas;
 
 
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (1, "Alien, el octavo pasajero", 1979, 116, "De regreso a la Tierra, la nave de carga Nostromo interrumpe su viaje y despierta a sus siete tripulantes. El ordenador central, MADRE, ha 

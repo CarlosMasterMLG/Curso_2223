@@ -9,11 +9,14 @@
 <body>
     
     <?php
+ini_set('display_errors', 'On');
+ini_set('html_errors', 0);
 
         $usuario = 'root';
-        $contrasenya = '12345678';
+        //$contrasenya = '12345678'; CASA
+        $contrasenya = '12345'; 
         $servidor = 'localhost';
-        $database = 'cartelera';
+        $database = 'prueba';
 
         $conexion = mysqli_connect($servidor, $usuario, $contrasenya, $database) or die("No se ha podido conectar con el servidor");
 
@@ -70,6 +73,9 @@
 
         //print_r($arrayDatos);
 
+        if (mysqli_connect_error()) {
+            echo "Error al conectar a MySQL: ".mysqli_connect_error();
+        }
 
     ?>
 
