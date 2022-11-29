@@ -127,7 +127,8 @@
 
         $peliculas = mostrarDatos();
 
-        echo $peliculas[1]->getTitulo();
+        echo $peliculas[1]->getTitulo()."<br>";
+        echo $peliculas[2]->getTitulo();
 
 
     ?>
