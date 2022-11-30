@@ -31,7 +31,7 @@ select * from T_Peliculas;
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (1, "Alien, el octavo pasajero", 1979, 116, "De regreso a la Tierra, la nave de carga Nostromo interrumpe su viaje y despierta a sus siete tripulantes. El ordenador central, MADRE, ha 
     detectado la misteriosa transmisión de una forma de vida desconocida, procedente de un planeta cercano aparentemente deshabitado. La nave se dirige entonces al extraño planeta para investigar el 
     origen de la comunicación.", "imgs/terror/alien_el_octavo_pasajero.jpg", 0, 1);
-insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (2, "El amanecer de los muertos", 2004, 100, "Rmeake del filme de terror de George A. Romero. Una inexplicable plaga ha diezmado la población del planeta, convirtiendo a los muertos en horribles zombies que continuamente buscan carne y sangre 
+insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (2, "El amanecer de los muertos", 2004, 100, "Remake del filme de terror de George A. Romero. Una inexplicable plaga ha diezmado la población del planeta, convirtiendo a los muertos en horribles zombies que continuamente buscan carne y sangre 
     humana para sobrevivir. En Wisconsin, un variopinto grupo de personas que han escapado a la plaga, tratan de salvar la vida refugiándose en un centro comercial, donde deben aprender no sólo a protegerse 
     de las hordas de zombies, sino también a convivir.", "imgs/terror/el_amanecer_de_los_muertos.jpg", 0, 1);
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (3, "Dejame salir", 2017, 103, "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris 
@@ -92,7 +92,10 @@ insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (20, "Tron", 1982, 82, "Un hacker es dividido en moléculas y transportado a las entrañas de un ordenador en el que un malvado programa controla 
     los comportamientos a su antojo.", "imgs/ciencia_ficción/tron.jpg", 0, 2);
 
-update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 20;	
+update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 20;
+update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 1;
+
+select * from T_Peliculas order by `votos` DESC;
 
 SELECT 
     tc.*, tp.*

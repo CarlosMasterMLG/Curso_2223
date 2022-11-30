@@ -13,14 +13,14 @@
 
         class Pelicula{
 
-            public $id;
-            public $titulo;
-            public $anyo;
-            public $duracion;
-            public $sinopsis;
-            public $imagen;
-            public $votos;
-            public $id_categoria;
+            private $id;
+            private $titulo;
+            private $anyo;
+            private $duracion;
+            private $sinopsis;
+            private $imagen;
+            private $votos;
+            private $id_categoria;
 
             public function __construct($id, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $id_categoria){
 
@@ -67,69 +67,114 @@
                 return $this->id_categoria;
             }
 
-
         }
 
         function cargarDatos(){
             // Contraseña->Casa: 12345678 | Clase: 12345
-        $conexion = mysqli_connect('localhost', 'root', '12345');
-        
-        mysqli_select_db($conexion, 'prueba');
-        
-        $consulta = "SELECT * FROM T_Peliculas";
-        
-        $resultado = mysqli_query($conexion, $consulta);
+            $conexion = mysqli_connect('localhost', 'root', '12345');
+            
+            mysqli_select_db($conexion, 'prueba');
+            
+            $consulta = "SELECT * FROM T_Peliculas";
+            //$consulta = "select * from T_Peliculas order by `votos` DESC";
+            
+            $resultado = mysqli_query($conexion, $consulta);
 
-        if (!$resultado) {
-            $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
-            $mensaje = 'Consulta realizada: ' . $consulta;
-            die($mensaje);
-        } else{
-            //echo "Conexion OK.<br>";
+            if (!$resultado) {
+                $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
+                $mensaje = 'Consulta realizada: ' . $consulta;
+                die($mensaje);
+            } else{
+                //echo "Conexion OK.<br>";
 
-            $peliculas = [];
-            $contador = 1;
-            while ($registro = mysqli_fetch_assoc($resultado)) {
+                $peliculas = [];
+                $contador = 1;
+                while ($registro = mysqli_fetch_assoc($resultado)) {
 
-                $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], $registro['votos'], $registro['id_categoria']);
-                $contador = $contador + 1;
-                
-            }
-
-            return $peliculas;
+                    $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], $registro['votos'], $registro['id_categoria']);
+                    $contador = $contador + 1;
+                    
+                }
+                return $peliculas;
             }
 
         }
-
 
 
         function mostrarDatos(){
             
             $datos = cargarDatos();
             $peliculas = [];
-            for ($i=1; $i < count($datos); $i++) { 
+            for ($i=1; $i < count($datos) + 1; $i++) { 
 
                 $peliculas[$i] = $datos[$i];
                 /*
                 echo $datos[$i]->getId()."<br>";
                 echo $datos[$i]->getTitulo()."<br>";
-                echo $datos[$i]->getAnyo()."<br>";
-                echo $datos[$i]->getDuracion()."<br>";
-                echo $datos[$i]->getSinopsis()."<br>";
-                echo $datos[$i]->getDuracion()."<br>";
-                echo $datos[$i]->getVotos()."<br>";
-                echo $datos[$i]->getIdCategoria()."<br><br><br>";*/
+                */
 
             }
             return $peliculas;
 
         } 
 
-        $peliculas = mostrarDatos();
+        function pintarPeliculas(){
+            $numCategoria = $_GET['categoria'];
+            $peliculas = mostrarDatos();
 
-        echo $peliculas[1]->getTitulo()."<br>";
-        echo $peliculas[2]->getTitulo();
+            if ($numCategoria==1){
+                $pos = 1;
+                $length = count($peliculas) / 2;
+                echo "<div class='contenedor'>
+                        <div class='primera_caja'>
+                            <h1>TERROR</h1>
+                            <a href='index.php'>INICIO</a>
+                        </div>";
+            } else {
+                $pos = 11;
+                $length = count($peliculas);
+                echo "<div class='contenedor'>
+                        <div class='primera_caja'>
+                            <h1>CIENCIA FICCIÓN</h1>
+                            <a href='index.php'>INICIO</a>
+                        </div>";
+            }
+                        
+            for ($pos; $pos <= $length; $pos++) { 
+            
+                $titulo = $peliculas[$pos]->getTitulo();
+                $portada = $peliculas[$pos]->getImagen();
+                $duracion = $peliculas[$pos]->getDuracion();
+                $votos = $peliculas[$pos]->getVotos();
+                $sinopsisReducida = substr($peliculas[$pos]->getSinopsis(), 0, 280);
+                
+                $ficha = $pos;
 
+                echo "  <div class='segunda_caja'>
+                        <div class='bordeIzquierdo'></div>
+                        <div class='primera_columna'>
+                            <h1 class='titulo'>$titulo</h1>
+                            <img src=$portada>
+                            <p class='duracion'>$duracion min.</p>
+                        </div>
+                        <div class='segunda_columna'>
+                            <p>
+                                $sinopsisReducida ...
+                            </p>
+                        </div>
+                        <div class='tercera_columna'>
+                            <div class='puntuacion'>
+                                <p>Número de votos: $votos</p>
+                            </div>
+                        <div class='verFicha'>
+                            <a href='ficha.php?ficha=$ficha'>Ver Ficha</a>
+                        </div>
+                        </div>
+                        <div class='bordeDerecho'></div>
+                        </div>";
+            }
+            echo "<div class='tercera_caja'></div></div>";
+        }
 
     ?>
 
