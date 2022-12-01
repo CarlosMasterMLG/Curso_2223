@@ -10,6 +10,31 @@ insert into T_Categorias(`ID`, `nombre`) values (2, "Ciencia Ficción");
 
 -- select * from T_Categorias;
 
+CREATE TABLE `T_Directores` (
+    `ID` INT NOT NULL PRIMARY KEY,
+    `nombre` VARCHAR(50) DEFAULT NULL
+);
+
+insert into T_Directores(`ID`, `nombre`) values (1, "Ridley Scott");
+insert into T_Directores(`ID`, `nombre`) values (2, "Zack Snyder");
+insert into T_Directores(`ID`, `nombre`) values (3, "Jordan Peele");
+insert into T_Directores(`ID`, `nombre`) values (4, "Steven Spielberg");
+insert into T_Directores(`ID`, `nombre`) values (5, "Ari Aster");
+insert into T_Directores(`ID`, `nombre`) values (6, "William Friedkin");
+insert into T_Directores(`ID`, `nombre`) values (7, "Stanley Kubrick");
+insert into T_Directores(`ID`, `nombre`) values (8, "John Carpenter");
+insert into T_Directores(`ID`, `nombre`) values (9, "Yeon Sang-ho");
+insert into T_Directores(`ID`, `nombre`) values (10, "Kevin Lewis");
+insert into T_Directores(`ID`, `nombre`) values (11, "Katsuhiro Ōtomo");
+insert into T_Directores(`ID`, `nombre`) values (12, "Robert Zemeckis");
+insert into T_Directores(`ID`, `nombre`) values (13, "Paul Verhoeven");
+insert into T_Directores(`ID`, `nombre`) values (14, "David Sandberg");
+insert into T_Directores(`ID`, `nombre`) values (15, "James Cameron");
+insert into T_Directores(`ID`, `nombre`) values (16, "Lilly Wachowski");
+insert into T_Directores(`ID`, `nombre`) values (17, "Steven Lisberger");
+
+select * from T_Directores;
+
 CREATE TABLE `T_Peliculas` (
     `ID` INT NOT NULL,
     `titulo` VARCHAR(200) DEFAULT NULL,
@@ -20,9 +45,7 @@ CREATE TABLE `T_Peliculas` (
     `votos` INT DEFAULT NULL,
     `id_categoria` INT DEFAULT NULL,
     PRIMARY KEY (ID),
-    KEY idx_T_peliculas_id_categoria (`id_categoria`),
-    CONSTRAINT T_peliculas_ibfk_1 FOREIGN KEY (`id_categoria`)
-        REFERENCES T_Categorias (`ID`)
+	FOREIGN KEY (id_categoria) REFERENCES T_Categorias (ID)
 );
 
 select * from T_Peliculas;

@@ -121,7 +121,7 @@
         function pintarPeliculas(){
             $numCategoria = $_GET['categoria'];
             $peliculas = mostrarDatos();
-
+            
             if ($numCategoria==1){
                 $pos = 1;
                 $length = count($peliculas) / 2;
