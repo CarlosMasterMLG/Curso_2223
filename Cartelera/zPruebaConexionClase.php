@@ -130,6 +130,8 @@
                 $length = count($peliculas);
             }
                 
+            $arrayContenido = [];
+            $contador = 1;
             for ($pos; $pos <= $length; $pos++) { 
             
                 $titulo = $peliculas[$pos]->getTitulo();
@@ -140,15 +142,17 @@
                 
                 $ficha = $pos;
 
-                $arrayContenido = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha);
-                return $arrayContenido;
+                $arrayContenido[$contador] = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha);
+                $contador = $contador + 1;
                 
             }
+
+            return $arrayContenido;
         }
 
         function pintarPeliculas(){
             $peliculas = guardarDatosPeliculas();
-            if ($peliculas[0]==1){
+            if ($peliculas[1][0]==1){
                 
                 echo "<div class='contenedor'>
                         <div class='primera_caja'>
@@ -163,27 +167,27 @@
                             <a href='index.php'>INICIO</a>
                         </div>";
             }
-
-            for ($peliculas[1]; $peliculas[1] <= $peliculas[2]; $peliculas[1]++) { 
+            
+            for ($i = 1; $i <= count($peliculas); $i++) { 
 
                 echo "  <div class='segunda_caja'>
                         <div class='bordeIzquierdo'></div>
                         <div class='primera_columna'>
-                            <h1 class='titulo'>".$peliculas[3]."</h1>
-                            <img src=".$peliculas[4].">
-                            <p class='duracion'>".$peliculas[5]." min.</p>
+                            <h1 class='titulo'>".$peliculas[$i][3]."</h1>
+                            <img src=".$peliculas[$i][4].">
+                            <p class='duracion'>".$peliculas[$i][5]." min.</p>
                         </div>
                         <div class='segunda_columna'>
                             <p>
-                            ".$peliculas[7]." ...
+                            ".$peliculas[$i][7]." ...
                             </p>
                         </div>
                         <div class='tercera_columna'>
                             <div class='puntuacion'>
-                                <p>Número de votos: ".$peliculas[6]."</p>
+                                <p>Número de votos: ".$peliculas[$i][6]."</p>
                             </div>
                         <div class='verFicha'>
-                            <a href='ficha.php?ficha=".$peliculas[8]."'>Ver Ficha</a>
+                            <a href='ficha.php?ficha=".$peliculas[$i][8]."'>Ver Ficha</a>
                         </div>
                         </div>
                         <div class='bordeDerecho'></div>
