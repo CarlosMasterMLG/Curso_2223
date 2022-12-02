@@ -118,28 +118,18 @@
 
         } 
 
-        function pintarPeliculas(){
-            $numCategoria = $_GET['categoria'];
+        function guardarDatosPeliculas(){
             $peliculas = mostrarDatos();
-            
+
+            $numCategoria = $_GET['categoria'];
             if ($numCategoria==1){
                 $pos = 1;
                 $length = count($peliculas) / 2;
-                echo "<div class='contenedor'>
-                        <div class='primera_caja'>
-                            <h1>TERROR</h1>
-                            <a href='index.php'>INICIO</a>
-                        </div>";
             } else {
                 $pos = 11;
                 $length = count($peliculas);
-                echo "<div class='contenedor'>
-                        <div class='primera_caja'>
-                            <h1>CIENCIA FICCIÓN</h1>
-                            <a href='index.php'>INICIO</a>
-                        </div>";
             }
-                        
+                
             for ($pos; $pos <= $length; $pos++) { 
             
                 $titulo = $peliculas[$pos]->getTitulo();
@@ -150,30 +140,57 @@
                 
                 $ficha = $pos;
 
+                $arrayContenido = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha);
+                return $arrayContenido;
+                
+            }
+        }
+
+        function pintarPeliculas(){
+            $peliculas = guardarDatosPeliculas();
+            if ($peliculas[0]==1){
+                
+                echo "<div class='contenedor'>
+                        <div class='primera_caja'>
+                            <h1>TERROR</h1>
+                            <a href='index.php'>INICIO</a>
+                        </div>";
+            } else {
+                
+                echo "<div class='contenedor'>
+                        <div class='primera_caja'>
+                            <h1>CIENCIA FICCIÓN</h1>
+                            <a href='index.php'>INICIO</a>
+                        </div>";
+            }
+
+            for ($peliculas[1]; $peliculas[1] <= $peliculas[2]; $peliculas[1]++) { 
+
                 echo "  <div class='segunda_caja'>
                         <div class='bordeIzquierdo'></div>
                         <div class='primera_columna'>
-                            <h1 class='titulo'>$titulo</h1>
-                            <img src=$portada>
-                            <p class='duracion'>$duracion min.</p>
+                            <h1 class='titulo'>".$peliculas[3]."</h1>
+                            <img src=".$peliculas[4].">
+                            <p class='duracion'>".$peliculas[5]." min.</p>
                         </div>
                         <div class='segunda_columna'>
                             <p>
-                                $sinopsisReducida ...
+                            ".$peliculas[7]." ...
                             </p>
                         </div>
                         <div class='tercera_columna'>
                             <div class='puntuacion'>
-                                <p>Número de votos: $votos</p>
+                                <p>Número de votos: ".$peliculas[6]."</p>
                             </div>
                         <div class='verFicha'>
-                            <a href='ficha.php?ficha=$ficha'>Ver Ficha</a>
+                            <a href='ficha.php?ficha=".$peliculas[8]."'>Ver Ficha</a>
                         </div>
                         </div>
                         <div class='bordeDerecho'></div>
                         </div>";
             }
             echo "<div class='tercera_caja'></div></div>";
+
         }
 
     ?>
