@@ -49,7 +49,18 @@ CREATE TABLE `T_Peliculas` (
 );
 
 select * from T_Peliculas;
-
+/*
+SELECT 
+    Actor.Nombre, Pelicula.titulo
+FROM
+    actores
+        INNER JOIN
+    actores_pelicula ON actores.ID = actores_pelicula.ID - Actor
+        INNER JOIN
+    Pelicula ON Pelicula.ID = actores_pelicula
+WHERE
+    Pelicula.ID = $saneado_id_pelicula;
+*/
 
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`) values (1, "Alien, el octavo pasajero", 1979, 116, "De regreso a la Tierra, la nave de carga Nostromo interrumpe su viaje y despierta a sus siete tripulantes. El ordenador central, MADRE, ha 
     detectado la misteriosa transmisión de una forma de vida desconocida, procedente de un planeta cercano aparentemente deshabitado. La nave se dirige entonces al extraño planeta para investigar el 
