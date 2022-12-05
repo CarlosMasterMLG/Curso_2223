@@ -21,8 +21,9 @@
             private $imagen;
             private $votos;
             private $id_categoria;
+            private $id_directores;
 
-            public function __construct($id, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $id_categoria){
+            public function __construct($id, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $id_categoria, $id_directores){
 
                 $this->id=$id;
                 $this->titulo=$titulo;
@@ -32,6 +33,7 @@
                 $this->imagen=$imagen;
                 $this->votos=$votos;
                 $this->id_categoria=$id_categoria;
+                $this->id_directores=$id_directores;
                 
             }
 
@@ -67,6 +69,10 @@
                 return $this->id_categoria;
             }
 
+            public function getIdDirectores(){
+                return $this->id_directores;
+            }
+
         }
 
         function cargarDatos(){
@@ -91,7 +97,8 @@
                 $contador = 1;
                 while ($registro = mysqli_fetch_assoc($resultado)) {
 
-                    $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], $registro['votos'], $registro['id_categoria']);
+                    $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], 
+                                                        $registro['votos'], $registro['id_categoria'], $registro['id_directores']);
                     $contador = $contador + 1;
                     
                 }
@@ -99,8 +106,7 @@
             }
 
         }
-
-
+/*
         function mostrarDatos(){
             
             $datos = cargarDatos();
@@ -112,14 +118,14 @@
                 echo $datos[$i]->getId()."<br>";
                 echo $datos[$i]->getTitulo()."<br>";
                 */
-
+/*
             }
             return $peliculas;
 
         } 
-
+*/
         function guardarDatosPeliculas(){
-            $peliculas = mostrarDatos();
+            $peliculas = cargarDatos();
 
             $numCategoria = $_GET['categoria'];
             if ($numCategoria==1){
@@ -139,10 +145,11 @@
                 $duracion = $peliculas[$pos]->getDuracion();
                 $votos = $peliculas[$pos]->getVotos();
                 $sinopsisReducida = substr($peliculas[$pos]->getSinopsis(), 0, 280);
+                $id_directores = $peliculas[$pos]->getIdDirectores();
                 
                 $ficha = $pos;
 
-                $arrayContenido[$contador] = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha);
+                $arrayContenido[$contador] = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha, $id_directores);
                 $contador = $contador + 1;
                 
             }
@@ -152,6 +159,7 @@
 
         function pintarPeliculas(){
             $peliculas = guardarDatosPeliculas();
+
             if ($peliculas[1][0]==1){
                 
                 echo "<div class='contenedor'>
