@@ -22,8 +22,9 @@
             private $votos;
             private $id_categoria;
             private $id_directores;
+            private $id_actores;
 
-            public function __construct($id, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $id_categoria, $id_directores){
+            public function __construct($id, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $id_categoria, $id_directores, $id_actores){
 
                 $this->id=$id;
                 $this->titulo=$titulo;
@@ -34,6 +35,7 @@
                 $this->votos=$votos;
                 $this->id_categoria=$id_categoria;
                 $this->id_directores=$id_directores;
+                $this->id_actores=$id_actores;
                 
             }
 
@@ -73,6 +75,10 @@
                 return $this->id_directores;
             }
 
+            public function getIdActores(){
+                return $this->id_actores;
+            }
+
         }
 
         function cargarDatos(){
@@ -98,7 +104,7 @@
                 while ($registro = mysqli_fetch_assoc($resultado)) {
 
                     $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], 
-                                                        $registro['votos'], $registro['id_categoria'], $registro['id_directores']);
+                                                        $registro['votos'], $registro['id_categoria'], $registro['id_directores'], $registro['id_actores']);
                     $contador = $contador + 1;
                     
                 }
@@ -146,10 +152,14 @@
                 $votos = $peliculas[$pos]->getVotos();
                 $sinopsisReducida = substr($peliculas[$pos]->getSinopsis(), 0, 280);
                 $id_directores = $peliculas[$pos]->getIdDirectores();
+                $sinopsis = $peliculas[$pos]->getSinopsis();
+                $anyo = $peliculas[$pos]->getAnyo();
+                $id_actores = $peliculas[$pos]->getIdActores();
                 
                 $ficha = $pos;
 
-                $arrayContenido[$contador] = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha, $id_directores);
+                $arrayContenido[$contador] = array($numCategoria, $pos, $length, $titulo, $portada, $duracion, $votos, $sinopsisReducida, $ficha, $id_directores, 
+                                                    $sinopsis, $anyo, $id_actores);
                 $contador = $contador + 1;
                 
             }
@@ -195,13 +205,93 @@
                                 <p>Número de votos: ".$peliculas[$i][6]."</p>
                             </div>
                         <div class='verFicha'>
-                            <a href='ficha.php?ficha=".$peliculas[$i][8]."'>Ver Ficha</a>
+                            <a href='ficha.php?ficha=".$peliculas[$i][8]."&?categoria=".$peliculas[$i][0]."'>Ver Ficha</a>
                         </div>
                         </div>
                         <div class='bordeDerecho'></div>
                         </div>";
             }
             echo "<div class='tercera_caja'></div></div>";
+
+        }
+
+
+        function pintarFicha(){
+            $peliculas = guardarDatosPeliculas();
+
+
+            $numFicha = $_GET['ficha'];
+
+            //$_GET['ficha'] == $peliculas[$i]->getId();
+/*
+            for ($i=0; $i < count($peliculas); $i++) { 
+
+                if ($ficha == $pos) {
+                    $numFicha = $i;;
+                }
+                
+            }*/
+
+            for ($i = 1; $i <= count($peliculas); $i++) { 
+
+                if ($peliculas[$i][1] == $numFicha) {
+                    echo "<div class='contenedor'>
+            <div class='primera_caja'>
+                <h1>".$peliculas[$i][3]."</h1>
+                <a href='index.php'>INICIO</a>
+            </div>";
+            echo "<div class='segunda_caja'>
+            <div class='bordeIzquierdo'></div>
+            <div class='primera_columna'>
+                <img src=".$peliculas[$i][4].">
+            </div>
+            <div class='segunda_columna'>
+                <br>
+                <p>Año: ".$peliculas[$i][11]."</p><br>
+                <p>Duración:  ".$peliculas[$i][5]." min.</p><br>
+                <p>Dirección: ".$peliculas[$i][9]."</p><br>
+                <p>Reparto: ".$peliculas[$i][12]."</p><br>
+            </div>
+            <div class='tercera_columna'>
+                <div class='sinopsis'>
+                <br>
+                <p>Sinopsis<br><br>
+                ".$peliculas[$i][10]."
+                </p>
+                </div>
+                <div class='puntuacion'>
+                    <p>Votos: ".$peliculas[$i][6]."</p>
+                    <p>Tu voto</p>
+                    <form action='voto.php' method='POST'>   
+                        <select name='voto'>
+                            <option value='default'>No vista</option>
+                            <option value=10>10</option>
+                            <option value=9>9</option>
+                            <option value=8>8</option>
+                            <option value=7>7</option>
+                            <option value=6>6</option>
+                            <option value=5>5</option>
+                            <option value=4>4</option>
+                            <option value=3>3</option>
+                            <option value=2>2</option>
+                            <option value=1>1</option>
+                        </select>
+                        <input type='submit' value='Enviar'>
+                    </form>
+                </div>
+            </div>
+            <div class='bordeDerecho'></div>
+        </div>";
+
+        echo "<div class='tercera_caja'></div></div>";
+        break;
+                }
+
+            }
+
+
+
+            
 
         }
 

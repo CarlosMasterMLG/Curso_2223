@@ -22,6 +22,10 @@
     
         <?php
 
+        require('zPruebaConexionClase.php');
+
+        pintarFicha();
+/*
         require('peliculaObj.php');
 
                     $id;
@@ -91,7 +95,7 @@
                         </p>
                         </div>
                         <div class='puntuacion'>
-                            <p>Puntuación: $puntuacion</p>
+                            <p>Votos: $puntuacion</p>
                             <p>Tu voto</p>
                             <form action='voto.php' method='POST'>   
                                 <select name='voto'>
@@ -116,6 +120,7 @@
 
                 echo "<div class='tercera_caja'></div></div>";
                 
+                */
         ?>
 
         
