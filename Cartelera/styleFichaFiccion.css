@@ -38,15 +38,17 @@
 .segunda_columna{
     float:left;
     height: 100%;
-    width:35%;
+    width:60%;
     border-left: 4px solid #FDB130;
     border-right: 4px solid #FDB130;
 }
+/*
 .tercera_columna{
     float:left;
     height: 100%;
     width: 25%;
 }
+*/
 .tercera_caja{
     background-color: #FDB130;
     height: 10%;
@@ -74,6 +76,7 @@ h1{
 }
 p{
     margin: 8px;
+    font-size: 20px;
 }
 a{
     margin: 8px;
