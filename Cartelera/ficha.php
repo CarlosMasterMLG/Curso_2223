@@ -25,9 +25,8 @@
         require('zPruebaConexionClase.php');
 
         pintarFicha();
-        ?>
-
         
+        ?>
         
 </body>
 </html>

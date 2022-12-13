@@ -245,6 +245,7 @@
                     <div class='primera_caja'>
                         <h1>".$peliculas[1]."</h1>
                         <a href='index.php'>INICIO</a>
+                        <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>
                     </div>";
                     echo "<div class='segunda_caja'>
                     <div class='bordeIzquierdo'></div>
@@ -253,14 +254,16 @@
                     </div>
                     <div class='segunda_columna'>
                         <br>
-                        <p>Año: ".$peliculas[3]."</p><br>
-                        <p>Duración:  ".$peliculas[4]."</p><br>
+                        <p>Año: $".$peliculas[3]."</p><br>
+                        <p>Duración:  ".$peliculas[4]." min.</p><br>
                         <p>Dirección: ".$peliculas[5]."</p><br>
                         <p>Reparto: ".$peliculas[6]."</p><br>
+                    </div>
+                    <div class='tercera_columna'>
+                        <br>
                         <p>Sinopsis<br><br>
                         ".$peliculas[7]."
                         </p>
-                    
                         <div class='puntuacion'>
                             <p>Votos: ".$peliculas[8]."</p>
                             <p>Tu voto</p>
@@ -278,13 +281,13 @@
                                     <option value=2>2</option>
                                     <option value=1>1</option>
                                 </select>
-                                <input type='submit' value='Enviar'>
+                                <input id='id' name = 'id' type = 'hidden' value=".$peliculas[0].">
+                                <input type='submit' value='Votar'>
                             </form>
                         </div>
-                        </div>
+                    </div>
                     <div class='bordeDerecho'></div>
                 </div>";
-
                 echo "<div class='tercera_caja'></div></div>";
 
         }

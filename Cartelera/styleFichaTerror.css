@@ -38,15 +38,17 @@
 .segunda_columna{
     float:left;
     height: 100%;
-    width:31%;
+    width:35%;
     border-left: 4px solid rgb(220, 95, 0);
     border-right: 4px solid rgb(220, 95, 0);
 }
+
 .tercera_columna{
     float:left;
     height: 100%;
-    width: 29%;
+    width: 25%;
 }
+
 .tercera_caja{
     background-color: rgb(220, 95, 0);
     height: 10%;
