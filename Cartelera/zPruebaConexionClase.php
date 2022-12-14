@@ -158,39 +158,6 @@
                 }
             }
 
-
-
-
-            /*
-            // Contraseña->Casa: 12345678 | Clase: 12345
-            $conexion = mysqli_connect('localhost', 'root', '12345');
-            
-            mysqli_select_db($conexion, 'prueba');
-            
-            $consulta = "SELECT * FROM T_Peliculas";
-            //$consulta = "select * from T_Peliculas order by `votos` DESC";
-            
-            $resultado = mysqli_query($conexion, $consulta);
-
-            if (!$resultado) {
-                $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
-                $mensaje = 'Consulta realizada: ' . $consulta;
-                die($mensaje);
-            } else{
-
-                $peliculas = [];
-                $contador = 1;
-                
-                while ($registro = mysqli_fetch_assoc($resultado)) {
-
-                    $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], 
-                                                        $registro['votos'], $registro['id_categoria'], $registro['id_directores'], $registro['id_actores']);
-                    $contador = $contador + 1;
-                    
-                }
-                return $peliculas;
-            }
-*/
         }
 
         function guardarDatosPeliculas(){
