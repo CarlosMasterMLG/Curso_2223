@@ -82,6 +82,86 @@
         }
 
         function cargarDatos(){
+            
+            // Contraseña->Casa: 12345678 | Clase: 12345
+            $conexion = mysqli_connect('localhost', 'root', '12345');
+
+            if (mysqli_connect_errno()) {
+                echo "Error al conectar a MySQL: ".mysqli_connect_error();
+            }
+            mysqli_select_db($conexion, 'prueba');
+            //$id_categoria = $_POST['ficha'];
+            //$sanitized_categoria_id = mysqli_real_escape_string($conexion, $id_categoria);
+
+            $consultaDirectores = "SELECT ID, nombre FROM T_Directores";
+            
+            $resultado = mysqli_query($conexion, $consultaDirectores);
+
+            if (!$resultado) {
+                $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
+                $mensaje .= 'Consulta realizada: ' . $consultaDirectores;
+            } else {
+                if (($resultado->num_rows) > 0) {
+                    
+                $directores = [];
+                $contador = 1;
+                
+                while ($registro = mysqli_fetch_assoc($resultado)) {
+
+                    $directores[$contador] = array($registro['ID'], $registro['nombre']);
+                    $contador = $contador + 1;
+                    
+                    //print_r($directores);
+
+                    //echo $registro['ID'].", ".$registro['nombre']."<br>";
+                }                    
+                } else {
+                    echo "No hay resultados";
+                }
+            }
+
+            //$consulta = "SELECT * FROM T_Peliculas";
+            $consulta = "SELECT ID, titulo, año, duracion, sinopsis, imagen, imagen, votos, id_categoria, id_directores, id_actores FROM T_Peliculas";
+            $resultado = mysqli_query($conexion, $consulta);
+
+            if (!$resultado) {
+                $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
+                $mensaje .= 'Consulta realizada: ' . $consulta;
+            } else {
+                if (($resultado->num_rows) > 0) {
+                    
+                $peliculas = [];
+                $contador = 1;
+                $nombreDirector = '';
+                
+                while ($registro = mysqli_fetch_assoc($resultado)) {
+
+                    for ($i=1; $i < count($directores)+1; $i++) { 
+
+                        if ($directores[$i][0] == $registro['id_directores']) {
+
+                            $nombreDirector = $directores[$i][1];
+                            break;
+
+                        }
+                    }
+
+                    $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], 
+                                                        $registro['votos'], $registro['id_categoria'], $nombreDirector, $registro['id_actores']);
+
+                    $contador = $contador + 1;
+                }
+                return $peliculas;
+                    
+                } else {
+                    echo "No hay resultados";
+                }
+            }
+
+
+
+
+            /*
             // Contraseña->Casa: 12345678 | Clase: 12345
             $conexion = mysqli_connect('localhost', 'root', '12345');
             
@@ -110,7 +190,7 @@
                 }
                 return $peliculas;
             }
-
+*/
         }
 
         function guardarDatosPeliculas(){
@@ -254,7 +334,7 @@
                     </div>
                     <div class='segunda_columna'>
                         <br>
-                        <p>Año: $".$peliculas[3]."</p><br>
+                        <p>Año: ".$peliculas[3]."</p><br>
                         <p>Duración:  ".$peliculas[4]." min.</p><br>
                         <p>Dirección: ".$peliculas[5]."</p><br>
                         <p>Reparto: ".$peliculas[6]."</p><br>
