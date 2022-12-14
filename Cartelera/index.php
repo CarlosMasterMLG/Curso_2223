@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Carlos Productions Cinema PRUEBA</title>
+    <title>Carlos Productions Cinema</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortut icon" type="image/png" href="imgs/retro_wave.gif" sizes="32x32">
 </head>
