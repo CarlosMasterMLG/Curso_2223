@@ -201,6 +201,22 @@ FROM
     T_Actores ta
         INNER JOIN
     T_Peliculas tp
+
 WHERE
     ta.ID = tp.id_actores
+ORDER BY tp.votos DESC;
+
+
+-- Intento de unir las tres en un join
+SELECT 
+    ta.*, tp.*, td.*
+FROM
+    T_Actores ta
+        INNER JOIN
+    T_Peliculas tp
+    inner join
+    T_Directores
+    
+WHERE
+    ta.ID = tp.id_actores and td.ID = tp.id_directores
 ORDER BY tp.votos DESC;
