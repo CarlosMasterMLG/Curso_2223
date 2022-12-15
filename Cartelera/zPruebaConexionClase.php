@@ -81,8 +81,8 @@
 
         }
 
-        function cargarDatos(){
-            
+        function cargarDirectores(){
+
             // Contraseña->Casa: 12345678 | Clase: 12345
             $conexion = mysqli_connect('localhost', 'root', '12345');
 
@@ -90,8 +90,6 @@
                 echo "Error al conectar a MySQL: ".mysqli_connect_error();
             }
             mysqli_select_db($conexion, 'prueba');
-            //$id_categoria = $_POST['ficha'];
-            //$sanitized_categoria_id = mysqli_real_escape_string($conexion, $id_categoria);
 
             $consultaDirectores = "SELECT ID, nombre FROM T_Directores";
             
@@ -118,10 +116,34 @@
                 } else {
                     echo "No hay resultados";
                 }
+
+                return $directores;
             }
 
+        }
+
+        function cargarDatos(){
+            
+            // Contraseña->Casa: 12345678 | Clase: 12345
+            $conexion = mysqli_connect('localhost', 'root', '12345');
+
+            if (mysqli_connect_errno()) {
+                echo "Error al conectar a MySQL: ".mysqli_connect_error();
+            }
+            mysqli_select_db($conexion, 'prueba');
+            //$id_categoria = $_POST['ficha'];
+            //$sanitized_categoria_id = mysqli_real_escape_string($conexion, $id_categoria);
+
             //$consulta = "SELECT * FROM T_Peliculas";
-            $consulta = "SELECT ID, titulo, año, duracion, sinopsis, imagen, imagen, votos, id_categoria, id_directores, id_actores FROM T_Peliculas";
+            //$consulta = "SELECT ID, titulo, año, duracion, sinopsis, imagen, imagen, votos, id_categoria, id_directores, id_actores FROM T_Peliculas";
+            $consulta = "SELECT 
+            ta.*, tp.*
+        FROM
+            T_Actores ta
+                INNER JOIN
+            T_Peliculas tp
+        WHERE
+            ta.ID = tp.id_actores";
             $resultado = mysqli_query($conexion, $consulta);
 
             if (!$resultado) {
@@ -133,6 +155,7 @@
                 $peliculas = [];
                 $contador = 1;
                 $nombreDirector = '';
+                $directores = cargarDirectores();
                 
                 while ($registro = mysqli_fetch_assoc($resultado)) {
 
@@ -147,7 +170,7 @@
                     }
 
                     $peliculas[$contador] = new Pelicula($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'], 
-                                                        $registro['votos'], $registro['id_categoria'], $nombreDirector, $registro['id_actores']);
+                                                        $registro['votos'], $registro['id_categoria'], $nombreDirector, $registro['nombres']);
 
                     $contador = $contador + 1;
                 }
@@ -207,6 +230,16 @@
                         <div class='primera_caja'>
                             <h1>TERROR</h1>
                             <a href='index.php'>INICIO</a>
+                            <p>Peliculas ordenadas por:
+                            <div class='dropdown'>
+                            <button class='dropbtn'>Ordenar</button>
+                            <div class='dropdown-content'>
+                              <a href='#'>Por titulo</a>
+                              <a href='#'>Por voto mayor-menor</a>
+                              <a href='#'>Por voto menor-mayor</a>
+                            </div>
+                          </div> 
+                                </p>
                         </div>";
             } else {
                 
