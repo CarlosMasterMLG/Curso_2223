@@ -225,21 +225,19 @@
             $peliculas = guardarDatosPeliculas();
 
             if ($peliculas[1][0]==1){
-                
+
                 echo "<div class='contenedor'>
                         <div class='primera_caja'>
                             <h1>TERROR</h1>
                             <a href='index.php'>INICIO</a>
-                            <p>Peliculas ordenadas por:
                             <div class='dropdown'>
                             <button class='dropbtn'>Ordenar</button>
                             <div class='dropdown-content'>
-                              <a href='#'>Por titulo</a>
-                              <a href='#'>Por voto mayor-menor</a>
-                              <a href='#'>Por voto menor-mayor</a>
+                              <a href='#titulo'>Por titulo</a>
+                              <a href='#mayor_menor'>Por voto mayor a menor</a>
+                              <a href='#menor_mayor'>Por voto menor a mayor</a>
                             </div>
                           </div> 
-                                </p>
                         </div>";
             } else {
                 
@@ -247,9 +245,19 @@
                         <div class='primera_caja'>
                             <h1>CIENCIA FICCIÓN</h1>
                             <a href='index.php'>INICIO</a>
+                            <div class='dropdown'>
+                            <button class='dropbtn'>Ordenar</button>
+                            <div class='dropdown-content'>
+                              <a href='#titulo'>Por titulo</a>
+                              <a href='#mayor_menor'>Por voto mayor a menor</a>
+                              <a href='#menor_mayor'>Por voto menor a mayor</a>
+                            </div>
+                          </div> 
                         </div>";
             }
-            
+
+            //array_multisort($peliculas[6], SORT_ASC, $peliculas);
+
             for ($i = 1; $i <= count($peliculas); $i++) { 
 
                 echo "  <div class='segunda_caja'>
