@@ -220,3 +220,23 @@ FROM
 WHERE
     ta.ID = tp.id_actores and td.ID = tp.id_directores
 ORDER BY tp.votos DESC;
+
+
+
+
+
+
+
+
+
+
+
+SELECT 
+            ta.ID, ta.nombres,
+            tp.ID, tp.titulo, tp.año, tp.duracion, tp.sinopsis, tp.imagen, tp.votos, tp.id_categoria, tp.id_directores, tp.id_actores
+        FROM
+            T_Actores ta
+                INNER JOIN
+            T_Peliculas tp
+        WHERE
+            ta.ID = tp.id_actores;

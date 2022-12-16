@@ -109,9 +109,6 @@
                     $directores[$contador] = array($registro['ID'], $registro['nombre']);
                     $contador = $contador + 1;
                     
-                    //print_r($directores);
-
-                    //echo $registro['ID'].", ".$registro['nombre']."<br>";
                 }                    
                 } else {
                     echo "No hay resultados";
@@ -131,19 +128,22 @@
                 echo "Error al conectar a MySQL: ".mysqli_connect_error();
             }
             mysqli_select_db($conexion, 'prueba');
-            //$id_categoria = $_POST['ficha'];
-            //$sanitized_categoria_id = mysqli_real_escape_string($conexion, $id_categoria);
+            /*
+            $id_categoria = $_POST['ficha'];
+            $sanitized_categoria_id = mysqli_real_escape_string($conexion, $id_categoria);
+            */
 
-            //$consulta = "SELECT * FROM T_Peliculas";
-            //$consulta = "SELECT ID, titulo, año, duracion, sinopsis, imagen, imagen, votos, id_categoria, id_directores, id_actores FROM T_Peliculas";
             $consulta = "SELECT 
-            ta.*, tp.*
+            ta.ID, ta.nombres,
+            tp.ID, tp.titulo, tp.año, tp.duracion, tp.sinopsis, tp.imagen, tp.votos, tp.id_categoria, tp.id_directores, tp.id_actores
         FROM
             T_Actores ta
                 INNER JOIN
             T_Peliculas tp
         WHERE
             ta.ID = tp.id_actores";
+
+
             $resultado = mysqli_query($conexion, $consulta);
 
             if (!$resultado) {
@@ -221,6 +221,75 @@
             return $arrayContenido;
         }
 
+        function ordenarPeliculas($peliculas){
+
+            $peliculasSinOrdenar = $peliculas;
+
+            $orden = $_GET['orden'];
+
+            if ($orden == 'titulo_mayor') {
+
+                for ($i=1; $i < count($peliculasSinOrdenar)+1; $i++) { 
+                    $posMin = $i;
+                    for ($j=$i+1; $j < count($peliculasSinOrdenar)+1; $j++) { 
+                        
+                        if ($peliculasSinOrdenar[$j][3] < $peliculasSinOrdenar[$posMin][3]) {
+                            $posMin = $j;
+                        }
+                    }
+                    $aux = $peliculasSinOrdenar[$posMin];
+                    $peliculasSinOrdenar[$posMin] = $peliculasSinOrdenar[$i];
+                    $peliculasSinOrdenar[$i] = $aux;
+                }
+                
+            } else if ($orden == 'titulo_menor') {
+                
+                for ($i=1; $i < count($peliculasSinOrdenar)+1; $i++) { 
+                    $posMin = $i;
+                    for ($j=$i+1; $j < count($peliculasSinOrdenar)+1; $j++) { 
+                        
+                        if ($peliculasSinOrdenar[$j][3] > $peliculasSinOrdenar[$posMin][3]) {
+                            $posMin = $j;
+                        }
+                    }
+                    $aux = $peliculasSinOrdenar[$posMin];
+                    $peliculasSinOrdenar[$posMin] = $peliculasSinOrdenar[$i];
+                    $peliculasSinOrdenar[$i] = $aux;
+                }
+
+            } else if ($orden == 'voto_mayor') {
+
+                for ($i=1; $i < count($peliculasSinOrdenar)+1; $i++) { 
+                    $posMin = $i;
+                    for ($j=$i+1; $j < count($peliculasSinOrdenar)+1; $j++) { 
+                        
+                        if ($peliculasSinOrdenar[$j][6] > $peliculasSinOrdenar[$posMin][6]) {
+                            $posMin = $j;
+                        }
+                    }
+                    $aux = $peliculasSinOrdenar[$posMin];
+                    $peliculasSinOrdenar[$posMin] = $peliculasSinOrdenar[$i];
+                    $peliculasSinOrdenar[$i] = $aux;
+                }
+                
+            } else if ($orden == 'voto_menor') {
+
+                for ($i=1; $i < count($peliculasSinOrdenar)+1; $i++) { 
+                    $posMin = $i;
+                    for ($j=$i+1; $j < count($peliculasSinOrdenar)+1; $j++) { 
+                        
+                        if ($peliculasSinOrdenar[$j][6] < $peliculasSinOrdenar[$posMin][6]) {
+                            $posMin = $j;
+                        }
+                    }
+                    $aux = $peliculasSinOrdenar[$posMin];
+                    $peliculasSinOrdenar[$posMin] = $peliculasSinOrdenar[$i];
+                    $peliculasSinOrdenar[$i] = $aux;
+                }
+            }
+            return $peliculasSinOrdenar;
+        }
+
         function pintarPeliculas(){
             $peliculas = guardarDatosPeliculas();
 
@@ -233,13 +302,14 @@
                             <div class='dropdown'>
                             <button class='dropbtn'>Ordenar</button>
                             <div class='dropdown-content'>
-                              <a href='#titulo'>Por titulo</a>
-                              <a href='#mayor_menor'>Por voto mayor a menor</a>
-                              <a href='#menor_mayor'>Por voto menor a mayor</a>
+                                <a href='peliculas.php?categoria=1&orden=titulo_mayor'>Por titulo mayor a menor</a>
+                                <a href='peliculas.php?categoria=1&orden=titulo_menor'>Por titulo menor a mayor</a>
+                              <a href='peliculas.php?categoria=1&orden=voto_mayor'>Por voto mayor a menor</a>
+                              <a href='peliculas.php?categoria=1&orden=voto_menor'>Por voto menor a mayor</a>
                             </div>
                           </div> 
                         </div>";
-            } else {
+            } else if ($peliculas[1][0]==2){
                 
                 echo "<div class='contenedor'>
                         <div class='primera_caja'>
@@ -248,36 +318,40 @@
                             <div class='dropdown'>
                             <button class='dropbtn'>Ordenar</button>
                             <div class='dropdown-content'>
-                              <a href='#titulo'>Por titulo</a>
-                              <a href='#mayor_menor'>Por voto mayor a menor</a>
-                              <a href='#menor_mayor'>Por voto menor a mayor</a>
+                                <a href='peliculas.php?categoria=2&orden=titulo_mayor'>Por titulo mayor a menor</a>
+                                <a href='peliculas.php?categoria=2&orden=titulo_menor'>Por titulo menor a mayor</a>
+                                <a href='peliculas.php?categoria=2&orden=voto_mayor'>Por voto mayor a menor</a>
+                                <a href='peliculas.php?categoria=2&orden=voto_menor'>Por voto menor a mayor</a>
                             </div>
                           </div> 
                         </div>";
+            } else {
+                echo "Ha ocurrido un error";
             }
+            
+            $peliculasOrdenadas = ordenarPeliculas($peliculas);
 
-            //array_multisort($peliculas[6], SORT_ASC, $peliculas);
 
-            for ($i = 1; $i <= count($peliculas); $i++) { 
+            for ($i = 1; $i <= count($peliculasOrdenadas); $i++) { 
 
                 echo "  <div class='segunda_caja'>
                         <div class='bordeIzquierdo'></div>
                         <div class='primera_columna'>
-                            <h1 class='titulo'>".$peliculas[$i][3]."</h1>
-                            <img src=".$peliculas[$i][4].">
-                            <p class='duracion'>".$peliculas[$i][5]." min.</p>
+                            <h1 class='titulo'>".$peliculasOrdenadas[$i][3]."</h1>
+                            <img src=".$peliculasOrdenadas[$i][4].">
+                            <p class='duracion'>".$peliculasOrdenadas[$i][5]." min.</p>
                         </div>
                         <div class='segunda_columna'>
                             <p>
-                            ".$peliculas[$i][7]." ...
+                            ".$peliculasOrdenadas[$i][7]." ...
                             </p>
                         </div>
                         <div class='tercera_columna'>
                             <div class='puntuacion'>
-                                <p>Número de votos: ".$peliculas[$i][6]."</p>
+                                <p>Número de votos: ".$peliculasOrdenadas[$i][6]."</p>
                             </div>
                         <div class='verFicha'>
-                            <a href='ficha.php?ficha=".$peliculas[$i][8]."&?categoria=".$peliculas[$i][0]."'>Ver Ficha</a>
+                            <a href='ficha.php?ficha=".$peliculasOrdenadas[$i][8]."&?categoria=".$peliculasOrdenadas[$i][0]."'>Ver Ficha</a>
                         </div>
                         </div>
                         <div class='bordeDerecho'></div>
