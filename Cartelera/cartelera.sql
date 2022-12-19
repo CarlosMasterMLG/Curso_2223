@@ -1,4 +1,3 @@
--- pensar tema director y reparto para otras tablas
 
 CREATE TABLE `T_Categorias` (
     `ID` INTEGER NOT NULL PRIMARY KEY,
@@ -7,8 +6,6 @@ CREATE TABLE `T_Categorias` (
 
 insert into T_Categorias(`ID`, `nombre`) values (1, "Terror");
 insert into T_Categorias(`ID`, `nombre`) values (2, "Ciencia Ficción");
-
--- select * from T_Categorias;
 
 CREATE TABLE `T_Directores` (
     `ID` INT NOT NULL PRIMARY KEY,
@@ -32,9 +29,6 @@ insert into T_Directores(`ID`, `nombre`) values (14, "David Sandberg");
 insert into T_Directores(`ID`, `nombre`) values (15, "James Cameron");
 insert into T_Directores(`ID`, `nombre`) values (16, "Lilly Wachowski");
 insert into T_Directores(`ID`, `nombre`) values (17, "Steven Lisberger");
-
-select * from T_Directores;
-
 
 CREATE TABLE `T_Actores` (
     `ID` INT NOT NULL PRIMARY KEY,
@@ -62,25 +56,6 @@ insert into T_Actores(`ID`, `nombres`) values (18, "Arnold Schwarzenegger, Linda
 insert into T_Actores(`ID`, `nombres`) values (19, "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Joe Pantoliano, Hugo Weaving, Marcus Chong, Gloria Foster, Matt Doran, Belinda McClory, Julian Arahanga, Anthony Ray Parker, Paul Goddard, Robert Taylor, Marc Aden Gray");
 insert into T_Actores(`ID`, `nombres`) values (20, "Jeff Bridges, Bruce Boxleitner, David Warner, Cindy Morgan, Barnard Hughes, Dan Shor, Peter Jurasik, Tony Stephano, Craig Chudy, Michael Dudikoff");
 
-select * from T_Actores;
-
-
-
-select * from T_Peliculas;
-/*
-SELECT 
-    Actor.Nombre, Pelicula.titulo
-FROM
-    actores
-        INNER JOIN
-    actores_pelicula ON actores.ID = actores_pelicula.ID - Actor
-        INNER JOIN
-    Pelicula ON Pelicula.ID = actores_pelicula
-WHERE
-    Pelicula.ID = $saneado_id_pelicula;
-*/
-
-
 CREATE TABLE `T_Peliculas` (
     `ID` INT NOT NULL,
     `titulo` VARCHAR(200) DEFAULT NULL,
@@ -97,7 +72,6 @@ CREATE TABLE `T_Peliculas` (
     foreign key (id_directores) references T_Directores (ID),
     foreign key (id_actores) references T_Actores (ID)
 );
-
 
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`, `id_directores`,`id_actores`) values (1, "Alien, el octavo pasajero", 1979, 116, "De regreso a la Tierra, la nave de carga Nostromo interrumpe su viaje y despierta a sus siete tripulantes. El ordenador central, MADRE, ha 
     detectado la misteriosa transmisión de una forma de vida desconocida, procedente de un planeta cercano aparentemente deshabitado. La nave se dirige entonces al extraño planeta para investigar el 
@@ -163,80 +137,28 @@ insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`
 insert into T_Peliculas(`ID`, `titulo`, `año`, `duracion`, `sinopsis`, `imagen`, `votos`, `id_categoria`, `id_directores`,`id_actores`) values (20, "Tron", 1982, 82, "Un hacker es dividido en moléculas y transportado a las entrañas de un ordenador en el que un malvado programa controla 
     los comportamientos a su antojo.", "imgs/ciencia_ficción/tron.jpg", 0, 2, 17,20);
 
-update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 20;
-update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 1;
+-- update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 20;
+-- update T_Peliculas set `votos` = 0 where T_Peliculas.ID = 1;
 
-select * from T_Peliculas order by `votos` DESC;
-
-
-
--- Categorias
-SELECT 
-    tc.*, tp.*
-FROM
-    T_Categorias tc
-        INNER JOIN
-    T_Peliculas tp
-WHERE
-    tc.ID = tp.id_categoria
-ORDER BY tp.votos DESC;
+-- select * from T_Peliculas order by `votos` DESC;
 
 
--- Directores
-SELECT 
-    td.*, tp.*
-FROM
-    T_Directores td
-        INNER JOIN
-    T_Peliculas tp
-WHERE
-    td.ID = tp.id_directores
-ORDER BY tp.votos DESC;
-
-
--- Actores
-SELECT 
-    ta.*, tp.*
-FROM
-    T_Actores ta
-        INNER JOIN
-    T_Peliculas tp
-
-WHERE
-    ta.ID = tp.id_actores
-ORDER BY tp.votos DESC;
-
-
--- Intento de unir las tres en un join
-SELECT 
-    ta.*, tp.*, td.*
-FROM
-    T_Actores ta
-        INNER JOIN
-    T_Peliculas tp
-    inner join
-    T_Directores
-    
-WHERE
-    ta.ID = tp.id_actores and td.ID = tp.id_directores
-ORDER BY tp.votos DESC;
-
-
-
-
-
-
-
-
-
-
-
-SELECT 
-            ta.ID, ta.nombres,
-            tp.ID, tp.titulo, tp.año, tp.duracion, tp.sinopsis, tp.imagen, tp.votos, tp.id_categoria, tp.id_directores, tp.id_actores
-        FROM
-            T_Actores ta
-                INNER JOIN
-            T_Peliculas tp
-        WHERE
-            ta.ID = tp.id_actores;
+-- SELECT 
+    -- ta.ID,
+    -- ta.nombres,
+    -- tp.ID,
+    -- tp.titulo,
+    -- tp.año,
+    -- tp.duracion,
+    -- tp.sinopsis,
+    -- tp.imagen,
+    -- tp.votos,
+    -- tp.id_categoria,
+    -- tp.id_directores,
+    -- tp.id_actores
+-- FROM
+    -- T_Actores ta
+        -- INNER JOIN
+    -- T_Peliculas tp
+-- WHERE
+    -- ta.ID = tp.id_actores;

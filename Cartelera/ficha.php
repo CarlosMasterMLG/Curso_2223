@@ -22,9 +22,18 @@
     
         <?php
 
-        require('zPruebaConexionClase.php');
+        require('funcionalidades.php');
 
-        pintarFicha();
+        try {
+            pintarFicha();
+        } catch (Exception $e) {
+            echo "<div class='contenedor_error'>   
+                    <H1 class='texto_error'>Ha ocurrido un error inesperado.</H1>
+                    <H1 class='texto_error'>Pongase en contacto con el administrador de la página.</H1>
+                </div>";
+            die();
+        }
+        
         
         ?>
         

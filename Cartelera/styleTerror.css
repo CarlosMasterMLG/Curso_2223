@@ -7,6 +7,18 @@
     height: 100%;
     width: 100%;
 }
+.contenedor_error{
+    background-image: url(./imgs/retro_wave.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.texto_error{
+    text-align: center;
+    font-size: 48px;
+}
 .primera_caja{
     background-color: rgb(220, 95, 0);
     height: 10%;
@@ -105,10 +117,6 @@ a{
     margin-left: 3px;
       font-size: 16px;
       border: none;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
     }
     
     /* The container <div> - needed to position the dropdown content */

@@ -7,6 +7,19 @@
     height: 100%;
     width: 100%;
 }
+.contenedor_error{
+    background-image: url(./imgs/retro_wave.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.texto_error{
+    text-align: center;
+    font-size: 48px;
+    color: white;
+}
 .primera_caja{
     background-color: rgb(220, 95, 0);
     height: 10%;
