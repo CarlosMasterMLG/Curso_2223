@@ -15,7 +15,7 @@
 <body>
     <?php
 
-        $fraseOriginal = "La casa es blanca y la nube es gris";
+        $fraseOriginal = "una mosca volava per la llum i la llum es va apagar";
         echo $fraseOriginal . "<br><br>";
         $frase = strtoupper($fraseOriginal);
         echo $frase . "<br><br>";
