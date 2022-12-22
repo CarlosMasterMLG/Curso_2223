@@ -16,9 +16,9 @@
             $ssql = "update T_Peliculas set votos=votos+1 where T_Peliculas.ID='$id'";
 
             // Contraseña->Casa: 12345678 | Clase: 12345
-            $conexion = mysqli_connect('localhost', 'root', '12345');
+            $conexion = mysqli_connect('localhost', 'root', '12345678');
             
-            mysqli_select_db($conexion, 'prueba');
+            mysqli_select_db($conexion, 'cartelera');
             
             $consulta = $ssql;
            

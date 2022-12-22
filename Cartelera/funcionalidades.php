@@ -84,12 +84,12 @@
         function cargarDirectores(){
 
             // Contraseña->Casa: 12345678 | Clase: 12345
-            $conexion = mysqli_connect('localhost', 'root', '12345');
+            $conexion = mysqli_connect('localhost', 'root', '12345678');
 
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ".mysqli_connect_error();
             }
-            mysqli_select_db($conexion, 'prueba');
+            mysqli_select_db($conexion, 'cartelera');
 
             $consultaDirectores = "SELECT ID, nombre FROM T_Directores";
             
@@ -122,12 +122,12 @@
         function cargarDatos(){
             
             // Contraseña->Casa: 12345678 | Clase: 12345
-            $conexion = mysqli_connect('localhost', 'root', '12345');
+            $conexion = mysqli_connect('localhost', 'root', '12345678');
 
             if (mysqli_connect_errno()) {
                 echo "Error al conectar a MySQL: ".mysqli_connect_error();
             }
-            mysqli_select_db($conexion, 'prueba');
+            mysqli_select_db($conexion, 'cartelera');
             /*
             $id_categoria = $_POST['ficha'];
             $sanitized_categoria_id = mysqli_real_escape_string($conexion, $id_categoria);
