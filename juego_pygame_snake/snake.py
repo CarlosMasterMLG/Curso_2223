@@ -39,8 +39,10 @@ if __name__ == "__main__":
                 if event.key == pygame.K_UP:
                     print("Key_UP has been pressed")
                     location_y-=10
+                    
         #Pintar
         surface.fill((255,255,255))
+        #pygame.image.load('257822.jpg')
         pygame.draw.rect(surface, color, pygame.Rect(location_x, location_y, 60, 60))
         pygame.draw.rect(surface, color, pygame.Rect(location_x-50, location_y+5, 50, 50))
         pygame.draw.rect(surface, color, pygame.Rect(location_x-90, location_y+10, 40, 40))
