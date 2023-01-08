@@ -1,55 +1,91 @@
 import pygame
-import time
-from pygame.locals import *
+import random
 
-if __name__ == "__main__":
-    pygame.init()
-    surface = pygame.display.set_mode((1000,500))
-    surface.fill((255,255,255))
-    pygame.display.flip() 
+class cuerpo:
+    def __init__(self, ventana):
+        self.x = 0
+        self.y = 0
+        self.dir = 0
+        self.ventana = ventana
 
-    location_x = 450
-    location_y = 200
-    color = (255,0,0)
-    exit = False
-    while not exit:
-        
+    def dibujar(self):
+        pygame.draw.rect(self.ventana, (0, 255, 0), (self.x, self.y, 10, 10))
+
+    def mover(self):
+        if self.dir == 0:
+            self.x += 10
+        elif self.dir == 1:
+            self.x -= 10
+        elif self.dir == 2:
+            self.y += 10
+        elif self.dir == 3:
+            self.y -= 10
+
+class manzanas:
+    def __init__(self, ventana):
+        self.x = random.randrange(40) * 10
+        self.y = random.randrange(40) * 10
+        self.ventana = ventana
+
+    def dibujar(self):
+        pygame.draw.rect(self.ventana, (255, 0, 0), (self.x, self.y, 10, 10))
+
+    def nueva_manzana(self):
+        self.x = random.randrange(40) * 10
+        self.y = random.randrange(40) * 10
+
+def refrescar(ventana):
+    ventana.fill((0, 0, 0))
+    comida.dibujar()
+    for i in range(len(serpiente)):
+        serpiente[i].dibujar()
+
+def seguir_cabeza():
+    for i in range(len(serpiente) -1):
+        serpiente[len(serpiente) -i -1].x = serpiente[len(serpiente) -i -2].x
+        serpiente[len(serpiente) -i -1].y = serpiente[len(serpiente) -i -2].y
+
+def main():
+    global serpiente, comida
+    ventana = pygame.display.set_mode((400, 400))
+    ventana.fill((0, 0, 0))
+    comida = manzanas(ventana)
+    serpiente = [cuerpo(ventana)]
+    run = True
+    while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-            
-            #¿Se ha pulsado una tecla?
+                run = False
             if event.type == pygame.KEYDOWN:
-                
                 if event.key == pygame.K_RIGHT:
-                    print("Key_RIGHT has been pressed")
-                    location_x+=10
-
-                    #while location_x < 1000:
-                        #location_x+=10
-                        #time.sleep(1)
-
-
-                if event.key == pygame.K_DOWN:
-                    print("Key K_DOWN has been pressed")
-                    location_y+=10
+                    serpiente[0].dir = 0
                 if event.key == pygame.K_LEFT:
-                    print("Key_LEFT has been pressed")
-                    location_x-=10
+                    serpiente[0].dir = 1
+                if event.key == pygame.K_DOWN:
+                    serpiente[0].dir = 2
                 if event.key == pygame.K_UP:
-                    print("Key_UP has been pressed")
-                    location_y-=10
-                    
-        #Pintar
-        surface.fill((255,255,255))
-        #pygame.image.load('257822.jpg')
-        pygame.draw.rect(surface, color, pygame.Rect(location_x, location_y, 60, 60))
-        pygame.draw.rect(surface, color, pygame.Rect(location_x-50, location_y+5, 50, 50))
-        pygame.draw.rect(surface, color, pygame.Rect(location_x-90, location_y+10, 40, 40))
-        pygame.display.flip()
-               
+                    serpiente[0].dir = 3
+        serpiente[0].mover()
+        refrescar(ventana)
+        
+        pygame.display.update()
+        pygame.time.delay(100)
+        if serpiente[0].x == comida.x and serpiente[0].y == comida.y:
+            comida.nueva_manzana()
+            serpiente.append(cuerpo(ventana))
+        seguir_cabeza()
+        for i in range(len(serpiente) - 2):
+            if serpiente[len(serpiente) - i - 1].x == serpiente[0].x and serpiente[len(serpiente) - i - 1].y == serpiente[0].y:
+                run = False
+        if serpiente[0].x > 400:
+            run = False
+        elif serpiente[0].x < 0:
+            run = False
+        if serpiente[0].y > 400:
+            run = False
+        elif serpiente[0].y < 0:
+            run = False
 
-
-
-
-
+if __name__ == '__main__':
+    main()
+    pygame.quit()
