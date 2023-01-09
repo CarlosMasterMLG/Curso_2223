@@ -14,17 +14,17 @@
             <div class="primera_columna">
                 <div class="cube">
                     <div class="top"></div>
-                    <div>
-                        <span style="--i:0;"></span>
-                        <span style="--i:1;"></span>
-                        <span style="--i:2;"></span>
-                        <span style="--i:3;"></span>
+                        <div>
+                            <span style="--i:0;"></span>
+                            <span style="--i:1;"></span>
+                            <span style="--i:2;"></span>
+                            <span style="--i:3;"></span>
                         </div>
                     </div>
             </div>
             <div class="segunda_columna">
-                    <h1 class="neon-title">Carlos Sport Tournament</h1>
-                    <a href="torneo.php" class="neon-button">Enlace</a>
+                <h1 class="neon-title">Carlos Sport Tournament</h1>
+                <a href="torneo.php" class="neon-button">Enlace</a>
             </div>
             <div class="tercera_columna">
                 <div class="cube">
