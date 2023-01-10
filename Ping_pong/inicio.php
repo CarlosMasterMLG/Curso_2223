@@ -33,11 +33,11 @@
                     <div class="top"></div>
                     <div>
                         <span style="--i:0;">
-                            <img src="imgs/borracho.jpeg" alt="">
+                            <img src="imgs/borracho.png" alt="">
                         </span>
-                        <span style="--i:1;"><img src="imgs/borracho.jpeg" alt=""></span>
-                        <span style="--i:2;"><img src="imgs/borracho.jpeg" alt=""></span>
-                        <span style="--i:3;"><img src="imgs/borracho.jpeg" alt=""></span>
+                        <span style="--i:1;"><img src="imgs/borracho.png" alt=""></span>
+                        <span style="--i:2;"><img src="imgs/borracho.png" alt=""></span>
+                        <span style="--i:3;"><img src="imgs/borracho.png" alt=""></span>
                     </div>
                 </div>
             </div>      
