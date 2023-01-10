@@ -15,7 +15,9 @@
                 <div class="cube">
                     <div class="top"></div>
                         <div>
-                            <span style="--i:0;"></span>
+                            <span style="--i:0;">
+                                <img src="imgs/shark2.png" alt="">
+                            </span>
                             <span style="--i:1;"></span>
                             <span style="--i:2;"></span>
                             <span style="--i:3;"></span>
@@ -30,7 +32,9 @@
                 <div class="cube">
                     <div class="top"></div>
                     <div>
-                        <span style="--i:0;"></span>
+                        <span style="--i:0;">
+                            <img src="imgs/shark.png" alt="">
+                        </span>
                         <span style="--i:1;"></span>
                         <span style="--i:2;"></span>
                         <span style="--i:3;"></span>
