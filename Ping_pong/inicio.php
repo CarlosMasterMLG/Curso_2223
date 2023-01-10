@@ -30,7 +30,7 @@
             </div>
             <div class="tercera_columna">
                 <div class="cube">
-                    <div class="top"></div>
+                    <div class="top"><img src="imgs/borracho.png" alt=""></div>
                     <div>
                         <span style="--i:0;">
                             <img src="imgs/borracho.png" alt="">
