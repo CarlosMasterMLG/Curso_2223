@@ -16,9 +16,11 @@
                     <div class="top"></div>
                         <div>
                             <span style="--i:0;">
-                                <img src="imgs/shark2.png" alt="">
+                                <img src="imgs/shark3.png" alt="">
                             </span>
-                            <span style="--i:1;"></span>
+                            <span style="--i:1;">
+                                <h2>No estoy aprendiendo nada</h2>
+                            </span>
                             <span style="--i:2;"></span>
                             <span style="--i:3;"></span>
                         </div>
@@ -30,14 +32,14 @@
             </div>
             <div class="tercera_columna">
                 <div class="cube">
-                    <div class="top"><img src="imgs/borracho.png" alt=""></div>
+                    <div class="top"></div>
                     <div>
                         <span style="--i:0;">
-                            <img src="imgs/borracho.png" alt="">
+                            <img src="imgs/shark3.png" alt="">
                         </span>
-                        <span style="--i:1;"><img src="imgs/borracho.png" alt=""></span>
-                        <span style="--i:2;"><img src="imgs/borracho.png" alt=""></span>
-                        <span style="--i:3;"><img src="imgs/borracho.png" alt=""></span>
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
                     </div>
                 </div>
             </div>      
