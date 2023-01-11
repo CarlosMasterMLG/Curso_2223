@@ -18,9 +18,7 @@
                             <span style="--i:0;">
                                 <img src="imgs/shark3.png" alt="">
                             </span>
-                            <span style="--i:1;">
-                                <h2>No estoy aprendiendo nada</h2>
-                            </span>
+                            <span style="--i:1;"></span>
                             <span style="--i:2;"></span>
                             <span style="--i:3;"></span>
                         </div>
