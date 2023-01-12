@@ -41,7 +41,7 @@
     -webkit-box-reflect: below 1px linear-gradient(transparent,transparent, #0005);
 }
 .container h2{
-    color: var(--clr-neonx);
+    color: var(--clr-neon);
     font-weight: 500;
     color: var(--clr-neon);
 }

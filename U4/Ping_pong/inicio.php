@@ -19,7 +19,9 @@
                                 <img src="imgs/shark3.png" alt="">
                             </span>
                             <span style="--i:1;"></span>
-                            <span style="--i:2;"></span>
+                            <span style="--i:2;">
+                                <img class="cocinero" src="imgs/carlos_cocina.png" alt="">
+                            </span>
                             <span style="--i:3;"></span>
                         </div>
                     </div>
@@ -36,7 +38,9 @@
                             <img src="imgs/shark3.png" alt="">
                         </span>
                         <span style="--i:1;"></span>
-                        <span style="--i:2;"></span>
+                        <span style="--i:2;">
+                            <img class="cocinero" src="imgs/carlos_cocina.png" alt="">
+                        </span>
                         <span style="--i:3;"></span>
                     </div>
                 </div>
