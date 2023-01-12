@@ -43,6 +43,7 @@
 .container h2{
     color: var(--clr-neonx);
     font-weight: 500;
+    color: var(--clr-neon);
 }
 
 
