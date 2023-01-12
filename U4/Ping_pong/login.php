@@ -23,14 +23,22 @@
                     </div>
             </div>
             <div class="segunda_columna">
-                <div class="container">
-                    <h2>Usuario</h2>
-                    <input type="name" placeholder="name" id="myName">
-                    <h2>Contraseña</h2>
-                    <input type="password" placeholder="password" id="myPassword">
-
-                    <a href="torneo.php" class="neon-button">INICIAR</a>
+            <div class="box">
+                <div class="form">
+                    <h2>Iniciar sesión</h2>
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span>Usuario</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" required="required">
+                        <span>Contraseña</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Iniciar">
                 </div>
+            </div>
             </div>
             <div class="tercera_columna">
                 <div class="cube">
