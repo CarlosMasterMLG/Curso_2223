@@ -164,10 +164,9 @@ body{
 .neon-button:hover::after{
     opacity: 1;
 }
-
 .box{
     position: relative;
-    margin: 300px;
+    margin: 280px;
     width: 380px;
     height: 420px;
     background: #1c1c1c;
