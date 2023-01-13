@@ -9,32 +9,69 @@
 <body>
     <div class='contenedor'>
 
-        <div class='borde'></div>
-        <div class='primera_ronda'>
-            <div class='partido1'>Carlos</div>
-            <div class='partido1'>Carlos</div>
-            <div class='partido2'>Carlos</div>
-            <div class='partido2'>Carlos</div>
-            <div class='partido3'>Carlos</div>
-            <div class='partido3'>Carlos</div>
-            <div class='partido4'>Carlos</div>
-            <div class='partido4'>Carlos</div>
+        <div class="caja1">
+            <h1 class="titulo">TORNEO</h1>
+            <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p> <!-- Falta el css de el enlace -->
         </div>
-        <div class='segunda_ronda'>
-            <div class='ganador1'>Carlos</div>
-            <div class='ganador2'>Carlos</div>
-            <div class='ganador3'>Carlos</div>
-            <div class='ganador3'>Carlos</div>
+
+        <div class="caja2">
+            <div class='borde'></div>
+            <div class='primera_ronda'>
+                <div class="rondas">
+                    <h3>CUARTOS</h3>
+                </div>
+                <div class='partido1'>Carlos</div>
+                <div class='partido1'>Carlos</div>
+
+                <div class='espacio'></div>
+
+                <div class='partido1'>Carlos</div>
+                <div class='partido1'>Carlos</div>
+
+                <div class='espacio'></div>
+
+                <div class='partido1'>Carlos</div>
+                <div class='partido1'>Carlos</div>
+
+                <div class='espacio'></div>
+
+                <div class='partido1'>Carlos</div>
+                <div class='partido1'>Carlos</div>
+            </div>
+            <div class='borde'></div>
+            <div class='segunda_ronda'>
+                <div class="rondas">
+                    <h3>SEMIFINAL</h3>
+                </div>
+                <div class='partido2'>Carlos</div>
+                <div class='espacio2'></div>
+                <div class='partido2'>Carlos</div>
+
+                <div class='espacio2'></div>
+
+                <div class='partido2'>Carlos</div>
+                <div class='espacio2'></div>
+                <div class='partido2'>Carlos</div>
+            </div>
+            <div class='borde'></div>
+            <div class='tercera_ronda'>
+                <div class="rondas">
+                    <h3>FINAL</h3>
+                </div>
+                <div class='partido3'>Carlos</div>
+                <div class='espacio3'></div>
+                <div class='partido3'>Carlos</div>
+            </div>
+            <div class='borde'></div>
+            <div class='cuarta_ronda'>
+                <div class="rondas">
+                    <h3>CAMPEÓN</h3>
+                </div>
+                <div class='ganador'>Carlos</div>
+            </div>
+            <div class='borde'></div>
         </div>
-        <div class='tercera_ronda'>
-            <div class='ganador5'>Carlos</div>
-            <div class='ganador6'>Carlos</div>
-        </div>
-        <div class='cuarta_ronda'>
-            <div class='ganador9'>Carlos</div>
-        </div>
-        <div class='borde'></div>
-        
+
     </div>
 </body>
 </html>

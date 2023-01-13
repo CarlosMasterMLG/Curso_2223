@@ -37,6 +37,7 @@
                         <i></i>
                     </div>
                     <input type="submit" value="Iniciar">
+                    <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p> <!-- Falta el css -->
                 </div>
             </div>
             </div>
