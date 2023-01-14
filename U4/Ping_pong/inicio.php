@@ -24,7 +24,7 @@
                             </span>
                             <span style="--i:3;"></span>
                         </div>
-                    </div>
+                    </div> <!-- Prueba git en casa -->
             </div>
             <div class="segunda_columna">
                 <h1 class="neon-title">Carlos Sport Tournament</h1>
