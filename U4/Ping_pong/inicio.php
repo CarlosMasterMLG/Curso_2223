@@ -28,7 +28,7 @@
             </div>
             <div class="segunda_columna">
                 <h1 class="neon-title">Carlos Sport Tournament</h1>
-                <a href="login.php" class="neon-button">Entrar</a>
+                <a href="loginVista.php" class="neon-button">Entrar</a>
             </div>
             <div class="tercera_columna">
                 <div class="cube">

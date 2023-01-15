@@ -7,15 +7,36 @@
     --clr-bg: hsl(323 21% 16%);
 }
 .contenedor{
-    background-color: black;
-    height: 100%;
-    width: 100%;
     color: var(--clr-neon);
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg,#d2001a, #7462ff, #23d5ab);
+    background-size: 300% 300%;
+    animation: color 6s ease-in-out infinite;
+}
+@keyframes color {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 }
 .caja1{
     height: 19%;
+}
+.caja1 a{
+    float: left;
+    margin-top: 15px;
+    margin-left: 11%;
+    font-size: 0.75em;
+    color: var(--clr-neon);
+    text-decoration: none;
 }
 .caja2{
     height: 80%;
@@ -33,6 +54,7 @@
     padding: 4%;
     border: 2px solid var(--clr-neon);
     height: 40px;
+    background: var(--clr-bg);
 }
 .espacio{
     margin-top: 6%;
@@ -44,6 +66,7 @@
     padding: 4%;
     border: 2px solid var(--clr-neon);
     height: 40px;
+    background: var(--clr-bg);
 }
 .espacio2{
     margin-top: 1%;
@@ -55,6 +78,7 @@
     padding: 4%;
     border: 2px solid var(--clr-neon);
     height: 40px;
+    background: var(--clr-bg);
 }
 .espacio3{
     margin-top: 1%;
@@ -65,6 +89,7 @@
     padding: 4%;
     border: 2px solid var(--clr-neon);
     height: 40px;
+    background: var(--clr-bg);
 }
 .borde{
     float: left;
@@ -100,4 +125,8 @@
     float: left;
     height: 100%;
     width: 11.1%;
+}
+a{
+    text-decoration: none;
+    color: var(--clr-neon);
 }

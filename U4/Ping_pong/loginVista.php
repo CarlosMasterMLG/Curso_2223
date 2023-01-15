@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/loginVista.css">
     <link rel="shortcut icon" href="imgs/raqueta.jpg" type="image/jpg">
     <title>Login</title>
 </head>
@@ -37,7 +37,9 @@
                         <i></i>
                     </div>
                     <input type="submit" value="Iniciar">
-                    <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p> <!-- Falta el css -->
+                    <div class="links">
+                        <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>
+                    </div>
                 </div>
             </div>
             </div>
