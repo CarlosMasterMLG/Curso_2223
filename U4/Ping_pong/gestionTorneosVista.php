@@ -119,7 +119,6 @@ empezado abajo del todo-->
             <input type='submit' value='Enviar'>
         </div>
     </div>");
-        
     }
 
 ?>
