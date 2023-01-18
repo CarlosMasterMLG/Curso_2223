@@ -107,18 +107,15 @@ empezado abajo del todo-->
 
     } elseif ($tipoPagina == 'creacion') {
         
-        echo("<div class='box'>
-        <div class='form'>
-            <div class='inputBox'>
+        echo("<div class='bloque brillo'>
                 <input type='text' required='required'>
                 <span>Nombre</span>
                 <i></i>
                 <input type='date' required='required'>
                 <span>Fecha</span>
                 <i></i>
-            <input type='submit' value='Enviar'>
-        </div>
-    </div>");
+                <input type='submit' value='Crear torneo'>
+            </div>");
     }
 
 ?>
