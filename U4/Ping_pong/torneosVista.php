@@ -12,7 +12,7 @@
         <table>
             <tr class="crear">
                 <th colspan="4">
-                    <a href="">Crear torneo</a>
+                    <a href="gestionTorneosVista.php?modo=creacion">Crear torneo</a>
                 </th>
                 <th colspan="3">
                     <p>Número de registros: 2</p>
@@ -34,7 +34,7 @@
                 <th>Finalizado</th>
                 <th>Carlos Sogorb</th>
                 <th>
-                    <a href="gestionTorneosVista.php">Editar</a>
+                    <a href="gestionTorneosVista.php?modo=edicion">Editar</a>
                 </th>
                 <th>Borrar</th>
             </tr>
@@ -45,7 +45,7 @@
                 <th>Finalizado</th>
                 <th>Carlos Acedo</th>
                 <th>
-                    <a href="gestionTorneosVista.php">Editar</a>
+                    <a href="gestionTorneosVista.php?modo=edicion">Editar</a>
                 </th>
                 <th>Borrar</th>
             </tr>
