@@ -58,23 +58,19 @@ CREATE TABLE T_Partido (
     tipo_partido ENUM('cuartos', 'semifinal', 'final'),
     id_jugador_a INT,
     id_jugador_b INT,
-    ganador INT #,
-    #FOREIGN KEY (id_torneo) REFERENCES T_Torneo (id_torneo),
-    #FOREIGN KEY (id_jugador_a) REFERENCES T_Jugador (id_jugador),
-    #FOREIGN KEY (id_jugador_b)  REFERENCES T_Jugador (id_jugador),
-    #FOREIGN KEY (ganador) REFERENCES T_Jugador (id_jugador)
+    ganador INT,
+    FOREIGN KEY (id_torneo) REFERENCES T_Torneo (id_torneo),
+    FOREIGN KEY (id_jugador_a) REFERENCES T_Jugador (id_jugador),
+    FOREIGN KEY (id_jugador_b)  REFERENCES T_Jugador (id_jugador),
+    FOREIGN KEY (ganador) REFERENCES T_Jugador (id_jugador)
 );
 
 insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 7, 3, 7);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('2', 'cuartos', 1, 4, 1);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('3', 'cuartos', 6, 8, 8);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('4', 'cuartos', 5, 2, 2);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('5', 'semifinal', 7, 1, 1);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('6', 'semifinal', 8, 2, 8);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('7', 'final', 1, 8, 8);
+insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 1, 4, 1);
+insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 6, 8, 8);
+insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 5, 2, 2);
+insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'semifinal', 7, 1, 1);
+insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'semifinal', 8, 2, 8);
+insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'final', 1, 8, 8);
 
 select * from T_Partido;
-
-
-
-
