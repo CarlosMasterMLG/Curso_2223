@@ -20,18 +20,6 @@ insert into T_Usuario (nombre, contrasenya) values ('Ilúvatar', '1234');
 
 select * from T_Usuario;
 
-CREATE TABLE T_Torneo (
-    id_torneo INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
-    num_jugadores INT DEFAULT 8,
-    fecha DATE NOT NULL
-);
-
-insert T_Torneo (nombre, fecha) values ('Torneo navidad', '2023-01-09');
-insert T_Torneo (nombre, fecha) values ('Torneo fin de curso', '2023-06-15');
-
-select * from T_Torneo;
-
 CREATE TABLE T_Jugador (
     id_jugador INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
@@ -51,6 +39,21 @@ insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, 
 insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Ilúvatar', 0, 0, 0, 0);
 
 select * from T_Jugador;
+
+CREATE TABLE T_Torneo (
+    id_torneo INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    fecha date,
+    estado ENUM('Finalizado','En proceso'),
+    num_jugadores INT DEFAULT 8,
+    campeon int,
+    FOREIGN KEY (campeon) references T_Jugador (id_jugador)
+);
+
+insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo navidad', '2023-01-09', 'Finalizado', 8);
+insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 2);
+
+select * from T_Torneo;
 
 CREATE TABLE T_Partido (
     id_partido INT PRIMARY KEY AUTO_INCREMENT,
