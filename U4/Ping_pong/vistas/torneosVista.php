@@ -44,7 +44,7 @@
         echo "<th>".$torneos->getFECHA()."</th>";
         echo "<th>".$torneos->getESTADO()."</th>";
         echo "<th>".$torneos->getCAMPEON()."</th>";
-        echo "<th><a href='../vistas/gestionTorneosVista.php?modo=edicion?id=".$torneos->getID()."'>Editar</a></th>";
+        echo "<th><a href='gestionTorneosVista.php?modo=edicion?id=".$torneos->getID()."'>Editar</a></th>";
         echo "<th>Borrar</th>";
         echo "</tr>";
     }
