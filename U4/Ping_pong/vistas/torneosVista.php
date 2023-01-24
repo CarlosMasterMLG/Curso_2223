@@ -6,7 +6,6 @@
 </head>
 
 <body>
-    <h1> Listado de torneos </h1>
     <?php
     ini_set('display_errors', 'On');
     ini_set('html_errors', 1);
@@ -45,7 +44,7 @@
         echo "<th>".$torneos->getFECHA()."</th>";
         echo "<th>".$torneos->getESTADO()."</th>";
         echo "<th>".$torneos->getCAMPEON()."</th>";
-        echo "<th><a href='gestionTorneosVista.php?modo=edicion?id=".$torneos->getID()."'>Editar</a></th>";
+        echo "<th><a href='/gestionTorneosVista.php?modo=edicion?id=".$torneos->getID()."'>Editar</a></th>";
         echo "<th>Borrar</th>";
         echo "</tr>";
     }

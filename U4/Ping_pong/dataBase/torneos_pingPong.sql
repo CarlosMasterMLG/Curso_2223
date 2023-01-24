@@ -77,3 +77,19 @@ insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, gana
 insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'final', 1, 8, 8);
 
 select * from T_Partido;
+
+
+
+
+SELECT 
+    tt.id_torneo, tt.nombre as'nombreTorneo', tt.fecha, tt.estado, tj.nombre
+FROM
+    T_Torneo tt
+        INNER JOIN
+    T_Jugador tj
+    where tt.campeon = tj.id_jugador;
+    
+
+
+
+    
