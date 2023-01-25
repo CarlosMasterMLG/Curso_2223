@@ -96,5 +96,40 @@ FROM
     
 
 
+SELECT 
+    tp.id_partido,
+    tp.tipo_partido,
+    tp.id_jugador_a,
+    tp.id_jugador_b,
+    tp.ganador,
+    tj.id_jugador,
+    tj.nombre
+FROM
+    T_Partido tp
+        INNER JOIN
+    T_Jugador tj
+        INNER JOIN
+    T_Torneo tt
+WHERE
+    tp.id_torneo = tt.id_torneo
+    and tp.ganador = tj.id_jugador;
+
+
+
+SELECT 
+    id_partido,
+    id_jugador_a,
+    id_jugador_b,
+    tipo_partido,
+    ganador
+FROM
+    T_Partido;
+
+
+
+
+
+
+
 
     
