@@ -46,7 +46,7 @@ class TorneoReglasNegocio {
 
         foreach ($results as $torneo) {
             $oTorneosReglasNegocio = new TorneoReglasNegocio();
-            $oTorneosReglasNegocio->init($torneo['id_torneo'], $torneo['nombreTorneo'], $torneo['fecha'], $torneo['estado'], $torneo['nombre']);
+            $oTorneosReglasNegocio->init($torneo['id_torneo'], $torneo['nombre'], $torneo['fecha'], $torneo['estado'], $torneo['campeon']);
             array_push($listaTorneos,$oTorneosReglasNegocio);            
         }
         

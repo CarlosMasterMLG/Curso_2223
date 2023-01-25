@@ -46,12 +46,12 @@ CREATE TABLE T_Torneo (
     fecha date,
     estado ENUM('Finalizado','En proceso'),
     num_jugadores INT DEFAULT 8,
-    campeon int,
-    FOREIGN KEY (campeon) references T_Jugador (id_jugador)
+    campeon varchar(50)
 );
 
-insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo navidad', '2023-01-09', 'Finalizado', 8);
-insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 2);
+insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo navidad', '2023-01-09', 'Finalizado', 'Ilúvatar');
+insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 'Bilbo Bolsón');
+insert T_Torneo (nombre, fecha, estado) values ('Torneo prueba', '2023-01-25', 'En proceso');
 
 select * from T_Torneo;
 
@@ -81,13 +81,18 @@ select * from T_Partido;
 
 
 
+-- SELECT 
+--     tt.id_torneo, tt.nombre as'nombreTorneo', tt.fecha, tt.estado, tj.nombre
+-- FROM
+--     T_Torneo tt
+--         INNER JOIN
+--     T_Jugador tj
+--     where tt.campeon = tj.id_jugador;
+
 SELECT 
-    tt.id_torneo, tt.nombre as'nombreTorneo', tt.fecha, tt.estado, tj.nombre
+    id_torneo, nombre, fecha, estado, campeon
 FROM
-    T_Torneo tt
-        INNER JOIN
-    T_Jugador tj
-    where tt.campeon = tj.id_jugador;
+    T_Torneo;
     
 
 

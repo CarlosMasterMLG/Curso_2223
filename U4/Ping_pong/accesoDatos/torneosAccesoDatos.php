@@ -15,12 +15,17 @@ class TorneoAccesoDatos {
         }
 
         mysqli_select_db($conexion, 'torneos_pingPong');
-        $consulta = mysqli_prepare($conexion, "SELECT tt.id_torneo, tt.nombre as'nombreTorneo', tt.fecha, tt.estado, tj.nombre
+        /*$consulta = mysqli_prepare($conexion, "SELECT tt.id_torneo, tt.nombre as'nombreTorneo', tt.fecha, tt.estado, tj.nombre
                                                 FROM
                                                 T_Torneo tt
                                                     INNER JOIN
                                                 T_Jugador tj
-                                                where tt.campeon = tj.id_jugador;");
+                                                where tt.campeon = tj.id_jugador;");*/
+        $consulta = mysqli_prepare($conexion, "SELECT 
+                                                    id_torneo, nombre, fecha, estado, campeon
+                                                FROM
+                                                    T_Torneo;");
+        
         $consulta->execute();
         $result = $consulta->get_result();
 
