@@ -3,7 +3,7 @@
     padding: 0px;
 }
 body{
-    /*background-color: black; TODO lo dejo comentado para ver en la página los valores que me devuelve*/
+    background-color: black;
 }
 .bloque{
     position: relative;

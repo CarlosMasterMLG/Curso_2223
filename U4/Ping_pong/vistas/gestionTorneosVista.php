@@ -21,29 +21,11 @@ empezado abajo del todo-->
     ini_set('display_errors', 'On');
     ini_set('html_errors', 1);
 
-    require('../negocio/gestionTorneosVistaReglasNegocio.php');
+    require('../negocio/gestionTorneosVistaPartidosReglasNegocio.php');
+    //require('../negocio/gestionTorneosVistaJugadoresReglasNegocio.php');
 
-    $partidosBL = new gestionTorneosReglasNegocio();
+    $partidosBL = new gestionTorneosPartidosReglasNegocio();
     $datosPartidos = $partidosBL->obtener();
-
-    foreach ($datosPartidos as $partidos) {
-        
-        print($partidos->getID());
-        echo "<br>";
-        print($partidos->getJUGADOR_A());
-        echo "<br>";
-        print($partidos->getJUGADOR_B());
-        echo "<br>";
-        print($partidos->getRONDA());
-        echo "<br>";
-        print($partidos->getGANADOR());
-        echo "<br>";
-        echo "<br>";
-
-    }
-
-
-
 
     $tipoPagina = $_GET['modo'];
 
@@ -55,7 +37,7 @@ empezado abajo del todo-->
                         <th colspan='4'>
                             <a href=''>Nuevo partido</a>
                         </th>
-                        <th colspan='3'>Número de registros: 7</th>
+                        <th colspan='3'>Número de registros: ".count($datosPartidos)."</th>
                     </tr>
                     <tr class='identificador'>
                         <th>ID</th>
@@ -65,72 +47,24 @@ empezado abajo del todo-->
                         <th>Ganador</th>
                         <th></th>
                         <th></th>
-                    </tr>
-                    <tr>
-                        <th>1</th>
-                        <th>Jugador 7</th>
-                        <th>Jugador 3</th>
-                        <th>Cuartos</th>
-                        <th>Jugador 7</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <th>Jugador 1</th>
-                        <th>Jugador 4</th>
-                        <th>Cuartos</th>
-                        <th>Jugador 1</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <th>Jugador 6</th>
-                        <th>Jugador 8</th>
-                        <th>Cuartos</th>
-                        <th>Jugador 8</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                    <tr>
-                        <th>4</th>
-                        <th>Jugador 5</th>
-                        <th>Jugador 2</th>
-                        <th>Cuartos</th>
-                        <th>Jugador 2</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                    <tr>
-                        <th>5</th>
-                        <th>Jugador 7</th>
-                        <th>Jugador 1</th>
-                        <th>Semifinales</th>
-                        <th>Jugador 1</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                    <tr>
-                        <th>6</th>
-                        <th>Jugador 8</th>
-                        <th>Jugador 2</th>
-                        <th>Semifinales</th>
-                        <th>Jugador 8</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                    <tr>
-                        <th>7</th>
-                        <th>Jugador 1</th>
-                        <th>Jugador 8</th>
-                        <th>Final</th>
-                        <th>Jugador 8</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
-                    </tr>
-                </table>
-            </div>");
+                    </tr>");
+
+                    foreach ($datosPartidos as $partidos){
+
+                        echo "<tr>";
+                        echo "<th>".$partidos->getID()."</th>";
+                        echo "<th>".$partidos->getJUGADOR_A()."</th>";
+                        echo "<th>".$partidos->getJUGADOR_B()."</th>";
+                        echo "<th>".$partidos->getRONDA()."</th>";
+                        echo "<th>".$partidos->getGANADOR()."</th>";
+                        echo "<th>Editar</th>";
+                        echo "<th>Borrar</th>";
+                        echo "</tr>";
+
+                    }
+
+                echo "</table>
+                    </div>";
 
     } elseif ($tipoPagina == 'creacion') {
         
