@@ -3,14 +3,14 @@
     padding: 0px;
 }
 body{
-    background-color: black;
+    /*background-color: black; TODO lo dejo comentado para ver en la página los valores que me devuelve*/
 }
 .bloque{
     position: relative;
     margin: 10% auto 0;
     width: 80%;
     height: 600px;
-    background: black;
+    background: black; 
 }
 .brillo::before, .brillo::after{
     content: '';

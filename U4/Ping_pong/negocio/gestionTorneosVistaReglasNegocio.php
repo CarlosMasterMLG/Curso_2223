@@ -42,19 +42,53 @@ class gestionTorneosReglasNegocio {
     }
 
     function obtener() {
-        /*$torneosDAL = new TorneoAccesoDatos();
-        $results = $torneosDAL->obtener();
 
-        $listaTorneos =  array();
+        //TODO da error
+        /*$jugadoresDAL = new jugadorAccesoDatos();
+        $resultadosJugador = new $jugadoresDAL->obtener();
 
-        foreach ($results as $torneo) {
-            $oTorneosReglasNegocio = new TorneoReglasNegocio();
-            $oTorneosReglasNegocio->init($torneo['id_torneo'], $torneo['nombre'], $torneo['fecha'], $torneo['estado'], $torneo['campeon']);
-            array_push($listaTorneos,$oTorneosReglasNegocio);            
-        }
+        $listaJugadores = array();
         
-        return $listaTorneos;
-        */
+        foreach($resultadosJugador as $jugadores){
+
+            arrayPush($listaJugadores, $jugadores['id_jugador'], $jugadores['nombre']);
+            
+        }*/
+
+        $partidosDAL = new partidoAccesoDatos();
+        $resultadosPartido = $partidosDAL->obtener();
+
+        $listaPartidos = array();
+
+        foreach($resultadosPartido as $partidos){
+
+           /* $idJugadorA = $partidos['id_jugador_a'];
+            $idJugadorB = $partidos['id_jugador_b'];
+            $idGanador = $partidos['ganador'];
+
+            for ($i=0; $i < count($listaJugadores); $i++) { 
+                
+                if ($idJugadorA == $listaJugadores($i)(0)) {
+                    $nombreJugadorA = $listaJugadores($i)(1);
+                }
+                if ($idJugadorB == $listaJugadores($i)(0)) {
+                    $nombreJugadorB = $listaJugadores($i)(1);
+                }
+                if ($idGanador == $listaJugadores($i)(0)) {
+                    $nombreGanador = $listaJugadores($i)(1);
+                }
+
+            }*/
+
+            $oGestionTorneosReglasNegocio = new gestionTorneosReglasNegocio();
+            $oGestionTorneosReglasNegocio->init($partidos['id_partido'], $partidos['id_jugador_a'], $partidos['id_jugador_b'], $partidos['tipo_partido'], $partidos['ganador']);
+            //$oGestionTorneosReglasNegocio->init($partidos['id_partido'], $nombreJugadorA, $nombreJugadorB, $partidos['tipo_partido'], $nombreGanador);
+            array_push($listaPartidos, $oGestionTorneosReglasNegocio);
+
+        }
+
+        return $listaPartidos;
+
     }
 }
 

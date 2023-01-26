@@ -18,6 +18,33 @@ empezado abajo del todo-->
 
 <?php
 
+    ini_set('display_errors', 'On');
+    ini_set('html_errors', 1);
+
+    require('../negocio/gestionTorneosVistaReglasNegocio.php');
+
+    $partidosBL = new gestionTorneosReglasNegocio();
+    $datosPartidos = $partidosBL->obtener();
+
+    foreach ($datosPartidos as $partidos) {
+        
+        print($partidos->getID());
+        echo "<br>";
+        print($partidos->getJUGADOR_A());
+        echo "<br>";
+        print($partidos->getJUGADOR_B());
+        echo "<br>";
+        print($partidos->getRONDA());
+        echo "<br>";
+        print($partidos->getGANADOR());
+        echo "<br>";
+        echo "<br>";
+
+    }
+
+
+
+
     $tipoPagina = $_GET['modo'];
 
     if ($tipoPagina == 'edicion') {

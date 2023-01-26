@@ -2,7 +2,7 @@
 ini_set('display_errors', 'On');
 ini_set('html_errors', 1);
 
-class TorneoAccesoDatos {        
+class partidoAccesoDatos {        
     function __construct() {
     }
 
