@@ -6,6 +6,7 @@ require("../accesoDatos/gestionTorneosVistaAccesoDatos.php");
 
 class gestionTorneosVistaReglasNegocio {
 
+    private $ID_TORNEO;
     private $ID;
     private $JUGADOR_A;
     private $JUGADOR_B;
@@ -16,7 +17,8 @@ class gestionTorneosVistaReglasNegocio {
     function __construct() {
     }
 
-    function init($id, $jugadorA, $jugadorB, $ronda, $ganador) {
+    function init($idTorneo, $id, $jugadorA, $jugadorB, $ronda, $ganador) {
+        $this->ID_TORNEO = $idTorneo;
         $this->ID = $id;
         $this->JUGADOR_A = $jugadorA;
         $this->JUGADOR_B = $jugadorB;
@@ -24,6 +26,9 @@ class gestionTorneosVistaReglasNegocio {
         $this->GANADOR = $ganador;
     }
 
+    function getID_TORNEO() {
+        return $this->ID_TORNEO;
+    }
     function getID() {
         return $this->ID;
     }
@@ -50,7 +55,7 @@ class gestionTorneosVistaReglasNegocio {
         foreach($resultadosPartido as $partidos){
 
             $oGestionTorneosReglasNegocio = new gestionTorneosVistaReglasNegocio();
-            $oGestionTorneosReglasNegocio->init($partidos['id_partido'], $partidos['jugador_a'], $partidos['jugador_b'], $partidos['tipo_partido'], $partidos['ganador']);
+            $oGestionTorneosReglasNegocio->init($partidos['id_torneo'], $partidos['id_partido'], $partidos['jugador_a'], $partidos['jugador_b'], $partidos['tipo_partido'], $partidos['ganador']);
             array_push($listaPartidos, $oGestionTorneosReglasNegocio);
 
         }

@@ -50,7 +50,7 @@ CREATE TABLE T_Torneo (
 );
 
 insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo navidad', '2023-01-09', 'Finalizado', 'Ilúvatar');
-insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 'Bilbo Bolsón');
+insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 'Cebadilla Mantecona');
 insert T_Torneo (nombre, fecha, estado) values ('Torneo prueba', '2023-01-25', 'En proceso');
 
 select * from T_Torneo;
@@ -73,6 +73,15 @@ insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) v
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'semifinal', 'Ilúvatar', 'Bilbo Bolsón', 'Ilúvatar');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'final', 'Gandalf el gris', 'Ilúvatar', 'Ilúvatar');
 
+
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Gandalf el gris', 'Bilbo Bolsón', 'Gandalf el gris');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Aragorn heredero de Isildur', 'Tom Bombadil', 'Tom Bombadil');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Cebadilla Mantecona', 'Túrin hijo de Húrin', 'Cebadilla Mantecona');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Melkor', 'Ilúvatar', 'Ilúvatar');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Gandalf el gris', 'Tom Bombadil', 'Tom Bombadil');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Cebadilla Mantecona', 'Ilúvatar', 'Cebadilla Mantecona');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'final', 'Gandalf el gris', 'Tom Bombadil', 'Cebadilla Mantecona');
+
 select * from T_Partido;
 
 
@@ -93,53 +102,6 @@ FROM
     
 
 
-SELECT 
-    tp.id_partido,
-    tp.tipo_partido,
-    tp.id_jugador_a,
-    tp.id_jugador_b,
-    tp.ganador,
-    tj.id_jugador,
-    tj.nombre
-FROM
-    T_Partido tp
-        INNER JOIN
-    T_Jugador tj
-        INNER JOIN
-    T_Torneo tt
-WHERE
-    tp.id_torneo = tt.id_torneo
-    and tp.ganador = tj.id_jugador;
-
-
-
-SELECT 
-    id_partido,
-    id_jugador_a,
-    id_jugador_b,
-    tipo_partido,
-    ganador
-FROM
-    T_Partido;
-
-
-
-SELECT 
-    id_jugador, nombre
-FROM
-    T_Jugador;
-
-
-
-SELECT 
-    tp.id_jugador_a,
-    tj.nombre
-    
-FROM
-    T_Partido tp
-        INNER JOIN
-    T_Jugador tj ON tp.ganador = tj.id_jugador;
-    
 
 
 

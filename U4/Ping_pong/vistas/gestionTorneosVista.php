@@ -50,6 +50,14 @@ empezado abajo del todo-->
 
                     foreach ($datosPartidos as $partidos){
 
+                        /*$idTorneo = $partidos->getID_TORNEO();
+
+                        for ($i=1; $i < count($partidos); $i++) { 
+                            
+
+
+                        }*/
+
                         echo "<tr>";
                         echo "<th>".$partidos->getID()."</th>";
                         echo "<th>".$partidos->getJUGADOR_A()."</th>";
