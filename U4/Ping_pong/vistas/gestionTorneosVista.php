@@ -21,10 +21,9 @@ empezado abajo del todo-->
     ini_set('display_errors', 'On');
     ini_set('html_errors', 1);
 
-    require('../negocio/gestionTorneosVistaPartidosReglasNegocio.php');
-    //require('../negocio/gestionTorneosVistaJugadoresReglasNegocio.php');
+    require('../negocio/gestionTorneosVistaReglasNegocio.php');
 
-    $partidosBL = new gestionTorneosPartidosReglasNegocio();
+    $partidosBL = new gestionTorneosVistaReglasNegocio();
     $datosPartidos = $partidosBL->obtener();
 
     $tipoPagina = $_GET['modo'];

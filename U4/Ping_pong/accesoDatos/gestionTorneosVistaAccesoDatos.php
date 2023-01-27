@@ -2,7 +2,7 @@
 ini_set('display_errors', 'On');
 ini_set('html_errors', 1);
 
-class jugadorAccesoDatos {        
+class partidoAccesoDatos {        
     function __construct() {
     }
 
@@ -16,21 +16,25 @@ class jugadorAccesoDatos {
 
         mysqli_select_db($conexion, 'torneos_pingPong');
         $consulta = mysqli_prepare($conexion, "SELECT 
-                                                    id_jugador, nombre
+                                                    id_partido,
+                                                    jugador_a,
+                                                    jugador_b,
+                                                    tipo_partido,
+                                                    ganador
                                                 FROM
-                                                    T_Jugador;");
+                                                    T_Partido;");
         
         $consulta->execute();
         $result = $consulta->get_result();
 
-        $jugadores =  array();
+        $partidos = array();
 
         while ($myrow = $result->fetch_assoc()) {
 
-            array_push($jugadores, $myrow);
+            array_push($partidos, $myrow);
         }
 
-        return $jugadores;
+        return $partidos;
     }
 }
 ?>

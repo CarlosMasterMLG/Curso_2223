@@ -2,9 +2,9 @@
 ini_set('display_errors', 'On');
 ini_set('html_errors', 1);
 
-require("../accesoDatos/gestionTorneosVistaPartidosAccesoDatos.php");
+require("../accesoDatos/gestionTorneosVistaAccesoDatos.php");
 
-class gestionTorneosPartidosReglasNegocio {
+class gestionTorneosVistaReglasNegocio {
 
     private $ID;
     private $JUGADOR_A;
@@ -49,8 +49,8 @@ class gestionTorneosPartidosReglasNegocio {
 
         foreach($resultadosPartido as $partidos){
 
-            $oGestionTorneosReglasNegocio = new gestionTorneosPartidosReglasNegocio();
-            $oGestionTorneosReglasNegocio->init($partidos['id_partido'], $partidos['id_jugador_a'], $partidos['id_jugador_b'], $partidos['tipo_partido'], $partidos['ganador']);
+            $oGestionTorneosReglasNegocio = new gestionTorneosVistaReglasNegocio();
+            $oGestionTorneosReglasNegocio->init($partidos['id_partido'], $partidos['jugador_a'], $partidos['jugador_b'], $partidos['tipo_partido'], $partidos['ganador']);
             array_push($listaPartidos, $oGestionTorneosReglasNegocio);
 
         }

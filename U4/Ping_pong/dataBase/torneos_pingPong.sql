@@ -59,22 +59,19 @@ CREATE TABLE T_Partido (
     id_partido INT PRIMARY KEY AUTO_INCREMENT,
     id_torneo INT,
     tipo_partido ENUM('cuartos', 'semifinal', 'final'),
-    id_jugador_a INT,
-    id_jugador_b INT,
-    ganador INT,
-    FOREIGN KEY (id_torneo) REFERENCES T_Torneo (id_torneo),
-    FOREIGN KEY (id_jugador_a) REFERENCES T_Jugador (id_jugador),
-    FOREIGN KEY (id_jugador_b)  REFERENCES T_Jugador (id_jugador),
-    FOREIGN KEY (ganador) REFERENCES T_Jugador (id_jugador)
+    jugador_a varchar(50),
+    jugador_b varchar(50),
+    ganador varchar(50),
+    FOREIGN KEY (id_torneo) REFERENCES T_Torneo (id_torneo)
 );
 
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 7, 3, 7);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 1, 4, 1);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 6, 8, 8);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'cuartos', 5, 2, 2);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'semifinal', 7, 1, 1);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'semifinal', 8, 2, 8);
-insert into T_Partido (id_torneo, tipo_partido, id_jugador_a, id_jugador_b, ganador) values ('1', 'final', 1, 8, 8);
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Melkor', 'Aragorn heredero de Isildur', 'Melkor');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Gandalf el gris', 'Tom Bombadil', 'Gandalf el gris');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Túrin hijo de Húrin', 'Ilúvatar', 'Ilúvatar');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Cebadilla Mantecona', 'Bilbo Bolsón', 'Bilbo Bolsón');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'semifinal', 'Melkor', 'Gandalf el gris', 'Gandalf el gris');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'semifinal', 'Ilúvatar', 'Bilbo Bolsón', 'Ilúvatar');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'final', 'Gandalf el gris', 'Ilúvatar', 'Ilúvatar');
 
 select * from T_Partido;
 
@@ -124,6 +121,31 @@ SELECT
     ganador
 FROM
     T_Partido;
+
+
+
+SELECT 
+    id_jugador, nombre
+FROM
+    T_Jugador;
+
+
+
+SELECT 
+    tp.id_jugador_a,
+    tj.nombre
+    
+FROM
+    T_Partido tp
+        INNER JOIN
+    T_Jugador tj ON tp.ganador = tj.id_jugador;
+    
+
+
+
+
+
+
 
 
 
