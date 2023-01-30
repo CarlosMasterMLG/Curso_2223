@@ -4,19 +4,12 @@ create database torneos_pingPong;
 use torneos_pingPong;
 
 CREATE TABLE T_Usuario (
-    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50) PRIMARY KEY,
     contrasenya VARCHAR(20) NOT NULL
 );
 
-insert into T_Usuario (nombre, contrasenya) values ('Gandalf el gris', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Bilbo Bolsón', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Aragorn heredero de Isildur', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Tom Bombadil', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Cebadilla Mantecona', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Túrin hijo de Húrin', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Melkor', '1234');
-insert into T_Usuario (nombre, contrasenya) values ('Ilúvatar', '1234');
+insert into T_Usuario (nombre, contrasenya) values ('Usuario', '1234');
+insert into T_Usuario (nombre, contrasenya) values ('Admin', '1234');
 
 select * from T_Usuario;
 
