@@ -16,7 +16,8 @@ class partidoAccesoDatos {
 
         $idTorneo = $_GET['id'];
 
-        mysqli_select_db($conexion, 'torneos_pingPong');
+        if (isset($idTorneo)) {
+            mysqli_select_db($conexion, 'torneos_pingPong');
         $consulta = mysqli_prepare($conexion, "SELECT 
                                                     id_torneo,
                                                     id_partido,
@@ -40,6 +41,9 @@ class partidoAccesoDatos {
         }
 
         return $partidos;
+        }
+
+        
     }
 }
 ?>

@@ -75,6 +75,8 @@ empezado abajo del todo-->
 
     } elseif ($tipoPagina == 'creacion') {
         
+        // TODO lo muestra bien pero muestra dos errores (en negro sobre fondo negro)
+
         echo("<div class='bloque brillo'>
                 <input type='text' required='required'>
                 <span>Nombre</span>
