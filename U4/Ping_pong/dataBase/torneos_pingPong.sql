@@ -22,12 +22,12 @@ CREATE TABLE T_Jugador (
     torneos_ganados INT NOT NULL
 );
 
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Gandalf el gris', 0, 0, 0, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Gandalf', 0, 0, 0, 0);
 insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Bilbo Bolsón', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Aragorn heredero de Isildur', 0, 0, 0, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Aragorn', 0, 0, 0, 0);
 insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Tom Bombadil', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Cebadilla Mantecona', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Túrin hijo de Húrin', 0, 0, 0, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Cebadilla', 0, 0, 0, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Túrin', 0, 0, 0, 0);
 insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Melkor', 0, 0, 0, 0);
 insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Ilúvatar', 0, 0, 0, 0);
 
@@ -43,7 +43,7 @@ CREATE TABLE T_Torneo (
 );
 
 insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo navidad', '2023-01-09', 'Finalizado', 'Ilúvatar');
-insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 'Cebadilla Mantecona');
+insert T_Torneo (nombre, fecha, estado, campeon) values ('Torneo fin de curso', '2023-06-15', 'Finalizado', 'Cebadilla');
 insert T_Torneo (nombre, fecha, estado) values ('Torneo prueba', '2023-01-25', 'En proceso');
 
 select * from T_Torneo;
@@ -58,22 +58,26 @@ CREATE TABLE T_Partido (
     FOREIGN KEY (id_torneo) REFERENCES T_Torneo (id_torneo)
 );
 
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Melkor', 'Aragorn heredero de Isildur', 'Melkor');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Gandalf el gris', 'Tom Bombadil', 'Gandalf el gris');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Túrin hijo de Húrin', 'Ilúvatar', 'Ilúvatar');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Cebadilla Mantecona', 'Bilbo Bolsón', 'Bilbo Bolsón');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'semifinal', 'Melkor', 'Gandalf el gris', 'Gandalf el gris');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Melkor', 'Aragorn', 'Melkor');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Gandalf', 'Tom Bombadil', 'Gandalf');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Túrin', 'Ilúvatar', 'Ilúvatar');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'cuartos', 'Cebadilla', 'Bilbo Bolsón', 'Bilbo Bolsón');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'semifinal', 'Melkor', 'Gandalf', 'Gandalf');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'semifinal', 'Ilúvatar', 'Bilbo Bolsón', 'Ilúvatar');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'final', 'Gandalf el gris', 'Ilúvatar', 'Ilúvatar');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('1', 'final', 'Gandalf', 'Ilúvatar', 'Ilúvatar');
 
-
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Gandalf el gris', 'Bilbo Bolsón', 'Gandalf el gris');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Aragorn heredero de Isildur', 'Tom Bombadil', 'Tom Bombadil');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Cebadilla Mantecona', 'Túrin hijo de Húrin', 'Cebadilla Mantecona');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Gandalf', 'Bilbo Bolsón', 'Gandalf');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Aragorn', 'Tom Bombadil', 'Tom Bombadil');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Cebadilla', 'Túrin', 'Cebadilla');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Melkor', 'Ilúvatar', 'Ilúvatar');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Gandalf el gris', 'Tom Bombadil', 'Tom Bombadil');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Cebadilla Mantecona', 'Ilúvatar', 'Cebadilla Mantecona');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'final', 'Gandalf el gris', 'Tom Bombadil', 'Cebadilla Mantecona');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Gandalf', 'Tom Bombadil', 'Tom Bombadil');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Cebadilla', 'Ilúvatar', 'Cebadilla');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'final', 'Gandalf', 'Tom Bombadil', 'Cebadilla');
+
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Gandalf', 'Bilbo Bolsón', 'Gandalf');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Aragorn', 'Tom Bombadil', 'Tom Bombadil');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Cebadilla', 'Túrin', 'Cebadilla');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Melkor', 'Ilúvatar', 'Ilúvatar');
 
 select * from T_Partido;
 

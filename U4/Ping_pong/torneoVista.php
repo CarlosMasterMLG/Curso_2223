@@ -11,7 +11,7 @@
 
         <div class="caja1">
             <h1 class="titulo">TORNEO</h1>
-            <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p> <!-- Falta el css de el enlace -->
+            <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>
         </div>
 
         <div class="caja2">
