@@ -30,8 +30,6 @@
                 <th>Fecha</th>
                 <th>Estado</th>
                 <th>Campeón</th>
-                <th></th>
-                <th></th>
             </tr>";
 
     foreach ($datosTorneos as $torneos){
