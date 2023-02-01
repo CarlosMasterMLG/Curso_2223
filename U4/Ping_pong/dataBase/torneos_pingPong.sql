@@ -22,14 +22,14 @@ CREATE TABLE T_Jugador (
     torneos_ganados INT NOT NULL
 );
 
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Gandalf', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Bilbo Bolsón', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Aragorn', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Tom Bombadil', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Cebadilla', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Túrin', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Melkor', 0, 0, 0, 0);
-insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Ilúvatar', 0, 0, 0, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Gandalf', 6, 4, 3, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Bilbo Bolsón', 4, 1, 3, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Aragorn', 3, 0, 3, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Tom Bombadil', 5, 3, 3, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Cebadilla', 5, 4, 3, 1);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Túrin', 3, 0, 3, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Melkor', 4, 1, 3, 0);
+insert into T_Jugador (nombre, total_partidos, partidos_ganados, total_torneos, torneos_ganados) values ('Ilúvatar', 6, 5, 3, 1);
 
 select * from T_Jugador;
 
@@ -72,7 +72,7 @@ insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) v
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'cuartos', 'Melkor', 'Ilúvatar', 'Ilúvatar');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Gandalf', 'Tom Bombadil', 'Tom Bombadil');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Cebadilla', 'Ilúvatar', 'Cebadilla');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'final', 'Gandalf', 'Tom Bombadil', 'Cebadilla');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'final', 'Cebadilla', 'Tom Bombadil', 'Cebadilla');
 
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Gandalf', 'Bilbo Bolsón', 'Gandalf');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Aragorn', 'Tom Bombadil', 'Tom Bombadil');

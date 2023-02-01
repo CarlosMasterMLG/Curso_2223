@@ -28,11 +28,11 @@
     }
 }
 .caja1{
-    height: 19%;
+    height: 18%;
 }
 .caja1 a{
     float: left;
-    margin-top: 15px;
+    margin-top: 12px;
     margin-left: 11%;
     font-size: 0.75em;
     color: var(--clr-neon);

@@ -36,10 +36,10 @@
 
     foreach($datosPartidos as $partidos){
 
-        echo "<div class='partido1'>".$partidos->getJUGADOR_A()."</div>
-            <div class='partido1'>".$partidos->getJUGADOR_B()."</div>";
+        echo "<div class='partido1'><a href='jugadorVista.php?jugador=".$partidos->getJUGADOR_A()."'>".$partidos->getJUGADOR_A()."</a></div>
+            <div class='partido1'><a href='jugadorVista.php?jugador=".$partidos->getJUGADOR_B()."'>".$partidos->getJUGADOR_B()."</a></div>";
         $i = $i + 1;
-
+        
         if ($i <= 3) {
             echo "<div class='espacio'></div>";
         }
@@ -59,7 +59,7 @@
 
     foreach($datosPartidos as $partidos){
 
-        echo "<div class='partido2'>".$partidos->getGANADOR()."</div>";
+        echo "<div class='partido2'><a href='jugadorVista.php?jugador=".$partidos->getGANADOR()."'>".$partidos->getGANADOR()."</a></div>";
         $i = $i + 1;
 
         if ($i <= 3) {
@@ -84,11 +84,11 @@
         $i = $i + 1;
 
         if ($i == 5) {
-            echo "<div class='partido3'>".$partidos->getGANADOR()."</div>
+            echo "<div class='partido3'><a href='jugadorVista.php?jugador=".$partidos->getGANADOR()."'>".$partidos->getGANADOR()."</a></div>
             <div class='espacio3'></div>";
         }
         if ($i == 6) {
-            echo "<div class='partido3'>".$partidos->getGANADOR()."</div>";
+            echo "<div class='partido3'><a href='jugadorVista.php?jugador=".$partidos->getGANADOR()."'>".$partidos->getGANADOR()."</a></div>";
         }
     }
 
@@ -107,7 +107,7 @@
 
         if ($i == 7) {
             echo "<div class='ganador'>
-            <a href='jugadorVista.php'>".$partidos->getGANADOR()."</a>
+            <a href='jugadorVista.php?jugador=".$partidos->getGANADOR()."'>".$partidos->getGANADOR()."</a>
         </div>";
         }
     }
