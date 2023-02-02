@@ -24,11 +24,13 @@ empezado abajo del todo-->
     require('../negocio/gestionTorneosVistaReglasNegocio.php');
 
     $partidosBL = new gestionTorneosVistaReglasNegocio();
-    $datosPartidos = $partidosBL->obtener();
+    
 
     $tipoPagina = $_GET['modo'];
 
     if ($tipoPagina == 'edicion') {
+
+        $datosPartidos = $partidosBL->obtener();
         
         echo ("<div class='bloque brillo'>
                 <table>
@@ -50,14 +52,6 @@ empezado abajo del todo-->
 
                     foreach ($datosPartidos as $partidos){
 
-                        /*$idTorneo = $partidos->getID_TORNEO();
-
-                        for ($i=1; $i < count($partidos); $i++) { 
-                            
-
-
-                        }*/
-
                         echo "<tr>";
                         echo "<th>".$partidos->getID()."</th>";
                         echo "<th>".$partidos->getJUGADOR_A()."</th>";
@@ -74,8 +68,6 @@ empezado abajo del todo-->
                     </div>";
 
     } elseif ($tipoPagina == 'creacion') {
-        
-        // TODO lo muestra bien pero muestra dos errores (en negro sobre fondo negro)
 
         echo("<div class='bloque brillo'>
                 <input type='text' required='required'>

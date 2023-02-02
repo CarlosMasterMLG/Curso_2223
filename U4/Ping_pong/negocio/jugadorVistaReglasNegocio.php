@@ -10,18 +10,18 @@ class JugadorReglasNegocio {
     private $PARTIDOS_GANADOS;
     private $TOTAL_TORNEOS;
     private $TORNEOS_GANADOS;
-    /*private $PORCENTAJE_VICTORIAS;*/
+    private $PORCENTAJE_VICTORIAS;
 
     function __construct() {
     }
 
-    function init($nombre, $totalPartidos, $partidosGanados, $totalTorneos, $torneosGanados/*, $porcentajeVictorias*/) {
+    function init($nombre, $totalPartidos, $partidosGanados, $totalTorneos, $torneosGanados, $porcentajeVictorias) {
         $this->NOMBRE = $nombre;
         $this->TOTAL_PARTIDOS = $totalPartidos;
         $this->PARTIDOS_GANADOS = $partidosGanados;
         $this->TOTAL_TORNEOS = $totalTorneos;
         $this->TORNEOS_GANADOS = $torneosGanados;
-        /*$this->PORCENTAJE_VICTORIAS = $porcentajeVictorias;*/
+        $this->PORCENTAJE_VICTORIAS = $porcentajeVictorias;
     }
 
     function getNOMBRE() {
@@ -39,9 +39,9 @@ class JugadorReglasNegocio {
     function getTORNEOS_GANADOS(){
         return $this->TORNEOS_GANADOS;
     }
-    /*function getPORCENTAJE_VICTORIAS(){
+    function getPORCENTAJE_VICTORIAS(){
         return $this->PORCENTAJE_VICTORIAS;
-    }*/
+    }
 
     function obtener() {
         $jugadorDAL = new JugadorAccesoDatos();
@@ -51,11 +51,10 @@ class JugadorReglasNegocio {
 
         foreach ($results as $jugador) {
 
-            /* TODO regla de tres compuesta
-            $porcentaje = */
+            $porcentaje = intval(($jugador['partidos_ganados'] / $jugador['total_partidos']) * 100);
 
             $oJugadorReglasNegocio = new JugadorReglasNegocio();
-        $oJugadorReglasNegocio->init($jugador['nombre'], $jugador['total_partidos'], $jugador['partidos_ganados'], $jugador['total_torneos'], $jugador['torneos_ganados']/*, $porcentaje*/);
+            $oJugadorReglasNegocio->init($jugador['nombre'], $jugador['total_partidos'], $jugador['partidos_ganados'], $jugador['total_torneos'], $jugador['torneos_ganados'], $porcentaje);
             array_push($listaJugador,$oJugadorReglasNegocio);            
         }
         

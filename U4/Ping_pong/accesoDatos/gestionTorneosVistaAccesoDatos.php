@@ -14,9 +14,10 @@ class partidoAccesoDatos {
             echo "Error al conectar a MySQL: ". mysqli_connect_error();
         }
 
-        $idTorneo = $_GET['id'];
 
-        if (isset($idTorneo)) {
+        if (isset($_GET['id'])) {
+            $idTorneo = $_GET['id'];
+
             mysqli_select_db($conexion, 'torneos_pingPong');
         $consulta = mysqli_prepare($conexion, "SELECT 
                                                     id_torneo,
@@ -42,8 +43,6 @@ class partidoAccesoDatos {
 
         return $partidos;
         }
-
-        
     }
 }
 ?>

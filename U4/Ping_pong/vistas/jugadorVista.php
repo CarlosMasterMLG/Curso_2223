@@ -15,7 +15,6 @@
     $jugadorBL = new JugadorReglasNegocio();
     $datosJugador = $jugadorBL->obtener();
 
-
     foreach($datosJugador as $jugador){
 
         echo "<div class='contenedor'>
@@ -53,7 +52,7 @@
         </tr>
         <tr>
             <th>Porcentaje de victorias:</th>
-            <th>*Por hacer*</th>
+            <th>".$jugador->getPORCENTAJE_VICTORIAS()."%</th>
         </tr>
         <tr>
             <th>Total de torneos disputados:</th>
