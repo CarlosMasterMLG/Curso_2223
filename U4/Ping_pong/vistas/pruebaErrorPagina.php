@@ -20,7 +20,7 @@
         text-align:center;
     }
     .subrayado{
-        border-style: none none solid none;
+        border-bottom: solid;
         border-width: 8px;
         width: 950px;
         margin-left: 300px;
