@@ -74,10 +74,10 @@ insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) v
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'semifinal', 'Cebadilla', 'Ilúvatar', 'Cebadilla');
 insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('2', 'final', 'Cebadilla', 'Tom Bombadil', 'Cebadilla');
 
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Gandalf', 'Bilbo Bolsón', 'Gandalf');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Aragorn', 'Tom Bombadil', 'Tom Bombadil');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Cebadilla', 'Túrin', 'Cebadilla');
-insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b, ganador) values ('3', 'cuartos', 'Melkor', 'Ilúvatar', 'Ilúvatar');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b) values ('3', 'cuartos', 'Gandalf', 'Bilbo Bolsón');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b) values ('3', 'cuartos', 'Aragorn', 'Tom Bombadil');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b) values ('3', 'cuartos', 'Cebadilla', 'Túrin');
+insert into T_Partido (id_torneo, tipo_partido, jugador_a, jugador_b) values ('3', 'cuartos', 'Melkor', 'Ilúvatar');
 
 select * from T_Partido;
 

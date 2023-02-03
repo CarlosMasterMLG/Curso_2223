@@ -19,11 +19,18 @@
         font-size: 20px;
         text-align:center;
     }
+    .subrayado{
+        border-style: none none solid none;
+        border-width: 8px;
+        width: 950px;
+        margin-left: 300px;
+    }
 </style>
 <body>
 
     <div class='titulos'>
         <h1>ERROR 404</h1>
+        <p class='subrayado'></p>
         <h1>Vaya, no se ha encontrado la página...</h1>
         <h2>Pruebe mas tarde o pongase en contacto <br> con el administrador de la página.</h2>
     </div>
