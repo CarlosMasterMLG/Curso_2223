@@ -70,13 +70,15 @@ empezado abajo del todo-->
     } elseif ($tipoPagina == 'creacion') {
 
         echo("<div class='bloque brillo'>
-                <input type='text' required='required'>
-                <span>Nombre</span>
-                <i></i>
-                <input type='date' required='required'>
-                <span>Fecha</span>
-                <i></i>
-                <input type='submit' value='Crear torneo'>
+                <form action='torneosVista.php' method='POST'>
+                    <input type='text' name='nombre' required='required'>
+                    <span>Nombre</span>
+                    <i></i>
+                    <input type='date' name='fecha' required='required'>
+                    <span>Fecha</span>
+                    <i></i>
+                    <input type='submit' value='Crear torneo'>
+                </form>
             </div>");
     }
 

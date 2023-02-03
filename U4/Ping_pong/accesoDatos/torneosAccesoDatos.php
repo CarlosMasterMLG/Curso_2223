@@ -2,6 +2,25 @@
 ini_set('display_errors', 'On');
 ini_set('html_errors', 1);
 
+if (isset($_POST['nombre'])) {
+
+    $nombre = $_POST['nombre'];
+    $fecha = $_POST['fecha'];
+
+    $conexion = mysqli_connect('localhost','root','12345');
+
+        if (mysqli_connect_errno()) {
+            echo "Error al conectar a MySQL: ". mysqli_connect_error();
+        }
+
+        mysqli_select_db($conexion, 'torneos_pingPong');
+        $consulta = mysqli_prepare($conexion, "insert into T_Torneo (nombre, fecha, estado) values ('".$nombre."', '".$fecha."', 'En proceso');");
+        
+        $consulta->execute();
+        $result = $consulta->get_result();
+
+}
+
 class TorneoAccesoDatos {        
     function __construct() {
     }
@@ -15,12 +34,6 @@ class TorneoAccesoDatos {
         }
 
         mysqli_select_db($conexion, 'torneos_pingPong');
-        /*$consulta = mysqli_prepare($conexion, "SELECT tt.id_torneo, tt.nombre as'nombreTorneo', tt.fecha, tt.estado, tj.nombre
-                                                FROM
-                                                T_Torneo tt
-                                                    INNER JOIN
-                                                T_Jugador tj
-                                                where tt.campeon = tj.id_jugador;");*/
         $consulta = mysqli_prepare($conexion, "SELECT 
                                                     id_torneo, nombre, fecha, estado, campeon
                                                 FROM
@@ -39,5 +52,11 @@ class TorneoAccesoDatos {
         return $torneos;
     }
 }
+
+
+
+
+
+
 ?>
 
