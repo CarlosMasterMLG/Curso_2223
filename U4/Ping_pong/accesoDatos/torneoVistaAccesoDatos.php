@@ -8,7 +8,7 @@ class PartidoAccesoDatos {
 
     function obtener() {
         // contraseña sql en casa->1234 | en clase->12345
-        $conexion = mysqli_connect('localhost','root','12345');
+        $conexion = mysqli_connect('localhost','root','1234');
 
         if (mysqli_connect_errno()) {
             echo "Error al conectar a MySQL: ". mysqli_connect_error();

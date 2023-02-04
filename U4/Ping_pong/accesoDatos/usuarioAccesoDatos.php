@@ -11,7 +11,7 @@ class UsuarioAccesoDatos
 
 	function insertar($usuario,$perfil,$clave)
 	{
-		$conexion = mysqli_connect('localhost','root','12345');
+		$conexion = mysqli_connect('localhost','root','1234');
 		if (mysqli_connect_errno())
 		{
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
@@ -28,7 +28,7 @@ class UsuarioAccesoDatos
 
     function verificar($usuario,$clave)
     {
-        $conexion = mysqli_connect('localhost','root','12345');
+        $conexion = mysqli_connect('localhost','root','1234');
 		if (mysqli_connect_errno())
 		{
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();

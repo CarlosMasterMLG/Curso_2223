@@ -24,9 +24,9 @@ empezado abajo del todo-->
     require('../negocio/gestionTorneosVistaReglasNegocio.php');
 
     $partidosBL = new gestionTorneosVistaReglasNegocio();
-    
 
     $tipoPagina = $_GET['modo'];
+    $idTorneo = $_GET['id'];
 
     if ($tipoPagina == 'edicion') {
 
@@ -58,8 +58,8 @@ empezado abajo del todo-->
                         echo "<th>".$partidos->getJUGADOR_B()."</th>";
                         echo "<th>".$partidos->getRONDA()."</th>";
                         echo "<th>".$partidos->getGANADOR()."</th>";
-                        echo "<th>Editar</th>";
-                        echo "<th>Borrar</th>";
+                        echo "<th><a class='editar' href=''>Editar</a></th>";
+                        echo "<th><a class='editar' href=''>Borrar</a></th>";
                         echo "</tr>";
 
                     }
@@ -80,6 +80,52 @@ empezado abajo del todo-->
                     <input type='submit' value='Crear torneo'>
                 </form>
             </div>");
+    } elseif ($tipoPagina == 'nuevoPartido'){
+
+        echo "
+            <div>
+                <div>
+                    <div>
+                        <div>Resultado de partida</div>
+                        <form action='gestionTorneosVista.php?' method='POST'>
+                            <select name='idJugadorA' id='jugador' required>
+                                <option selected='true' disabled='disabled'>Jugador A</option>
+                                <option value='1'>Gandalf</option>
+                                <option value='2'>Bilbo Bolsón</option>
+                                <option value='3'>Aragorn</option>
+                                <option value='4'>Tom Bombadil</option>
+                                <option value='5'> Cebadilla</option>
+                                <option value='6'>Túrin</option>
+                                <option value='7'>Melkor</option>
+                                <option value='8'>Ilúvatar</option>
+                            </select>
+                            <select name='idJugadorB' id='jugador' required>
+                                <option selected='true' disabled='disabled'>Jugador B</option>
+                                <option value='1'>Gandalf</option>
+                                <option value='2'>Bilbo Bolsón</option>
+                                <option value='3'>Aragorn</option>
+                                <option value='4'>Tom Bombadil</option>
+                                <option value='5'> Cebadilla</option>
+                                <option value='6'>Túrin</option>
+                                <option value='7'>Melkor</option>
+                                <option value='8'>Ilúvatar</option>
+                            </select>
+                            <select name='fase' id='jugador' required>
+                                <option selected='true' disabled='disabled'>Fase</option>
+                                <option value='Semifinales'>Semifinales</option>
+                                <option value='Final'>Final</option>
+                            </select>
+                            <input type='hidden' value='".$idTorneo."' name='idTorneo'>
+                            <input class='boton' type = 'submit'>
+                        </form>
+                        <a href='javascript:history.go(-1)'>VOLVER ATRÁS</a>";
+                        if(isset($error)){
+                            print("<div class='pie'>Introduce los datos correctamente.</div>");
+                        }                                                    
+        echo "      </div>
+                </div>
+            </div>";
+
     }
 
 ?>
