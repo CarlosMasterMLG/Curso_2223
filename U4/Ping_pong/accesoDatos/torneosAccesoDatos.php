@@ -7,7 +7,7 @@ if (isset($_POST['nombre'])) {
     $nombre = $_POST['nombre'];
     $fecha = $_POST['fecha'];
 
-    $conexion = mysqli_connect('localhost','root','1234');
+    $conexion = mysqli_connect('localhost','root','12345');
 
         if (mysqli_connect_errno()) {
             echo "Error al conectar a MySQL: ". mysqli_connect_error();
@@ -27,7 +27,7 @@ class TorneoAccesoDatos {
 
     function obtener() {
         // contraseña sql en casa->1234 | en clase->12345
-        $conexion = mysqli_connect('localhost','root','1234');
+        $conexion = mysqli_connect('localhost','root','12345');
 
         if (mysqli_connect_errno()) {
             echo "Error al conectar a MySQL: ". mysqli_connect_error();
