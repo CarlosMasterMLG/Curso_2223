@@ -1,41 +1,41 @@
 <?php
+header("access-control-allow-origin: *");
+ini_set('html_errors', 1);
+ini_set('display_errors', 1);
 
-    function cargarDatos(){
-        
-        // Contraseña->Casa: 1234 | Clase: 12345
-        $conexion = mysqli_connect('localhost', 'root', '12345');
+$conexion = mysqli_connect('localhost', 'root', '1234');
+mysqli_select_db($conexion, 'world');
+$consulta = mysqli_prepare($conexion, "SELECT Name FROM city ORDER BY Name ASC;");
 
-        if (mysqli_connect_errno()) {
-            echo "Error al conectar a MySQL: ".mysqli_connect_error();
-        }
-        mysqli_select_db($conexion, 'DBempresa');
+$consulta->execute();
+$result = $consulta->get_result();
 
-        $consulta = "select Name from country;";
+$arrayNombres = array();
 
+while ($myrow = $result->fetch_assoc()) {
 
-        $resultado = mysqli_query($conexion, $consulta);
+    array_push($arrayNombres, $myrow);
 
-        if (!$resultado) {
-            $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
-            $mensaje .= 'Consulta realizada: ' . $consulta;
-        } else {
-            if (($resultado->num_rows) > 0) {
-                
-            $paises = [];
-            $contador = 1;
-            
-            while ($registro = mysqli_fetch_assoc($resultado)) {
+}
 
-                $paises[$contador] = new Pelicula($registro['Nanme']);
+$nombre = $_REQUEST["nombre"];
+$hint = "";
 
-                $contador = $contador + 1;
-            }
-            return $paises;
-                
-            } else {
-                echo "No hay resultados";
-            }
-        }
-
+// lookup all hints from array if $q is different from ""
+if ($q !== "") {
+  $q = strtolower($q);
+  $len=strlen($q);
+  foreach($a as $name) {
+    if (stristr($q, substr($name, 0, $len))) {
+      if ($hint === "") {
+        $hint = $name;
+      } else {
+        $hint .= ", $name";
+      }
     }
+  }
+}
+
+// Output "no suggestion" if no hint was found or output correct values
+echo $hint === "" ? "no suggestion" : $hint;
 ?>
