@@ -1,5 +1,4 @@
 <?php
-header("access-control-allow-origin: *");
 ini_set('html_errors', 1);
 ini_set('display_errors', 1);
 
@@ -23,14 +22,16 @@ $hint = "";
 
 // lookup all hints from array if $q is different from ""
 if ($q !== "") {
+
   $q = strtolower($q);
   $len=strlen($q);
-  foreach($a as $name) {
-    if (stristr($q, substr($name, 0, $len))) {
+
+  foreach($q as $nombre) {
+    if (stristr($q, substr($nombre, 0, $len))) {
       if ($hint === "") {
-        $hint = $name;
+        $hint = $nombre;
       } else {
-        $hint .= ", $name";
+        $hint .= ", $nombre";
       }
     }
   }
